@@ -15,13 +15,13 @@ function Start_Dinner_1(){
 	////////////////////////////
 
 	Wait(2500);
-	n("Where is everyone?...");
+	n("Hol van mindenki?...");
 	n(". . .");
 
 	Choose({
-		"Moooom?": Waiting_1,
-		"Daaaaad?": Waiting_1,
-		"Hello, anybody?": Waiting_1
+		"Aaaaanyaa?": Waiting_1,
+		"Aaaapaa?": Waiting_1,
+		"Hé, valaki?": Waiting_1
 	});
 
 }
@@ -34,15 +34,15 @@ function Waiting_1(message){
 	n(". . .");
 
 	Choose({
-		"[start eating]": function(message){
+		"[enni kezdesz]": function(message){
 			$.waiting_action = "eat";
 			Waiting_2(message);
 		},
-		"[wait some more]": function(message){
+		"[tovább vársz]": function(message){
 			$.waiting_action = "wait";
 			Waiting_2(message);
 		},
-		"[play with food]": function(message){
+		"[játszol a kajával]": function(message){
 			$.waiting_action = "play";
 			Waiting_2(message);
 		}
@@ -64,7 +64,7 @@ function Waiting_2(message){
 	Show("nicky","dinner_nicky_defiant");
 
 	Choose({
-		"Cut the crying, cacophonous cat clock!": function(message){
+		"Kussolj el, te kakofón kandúr!": function(message){
 			n(message);
 
 			Show("mom","mom_stand");
@@ -72,47 +72,47 @@ function Waiting_2(message){
 			PlaySound("clock","dinner_ticking",{loop:-1});
 
 			if($.im_a_poet){
-				m("Did you learn poetry from a friend?");
+				m("Egy barátodtól tanulsz költészetet?");
 			}else{
-				m("Poetic.");
+				m("Költői.");
 			}
 
 			Show("nicky","dinner_nicky_sit");
-			n("Oh, hey mom.");
+			n("Ó, szia anya.");
 			
 			Waiting_End();
 		},
-		"Ugh, why did we get that thing?": function(message){
+		"Uhh, miért vettünk mi ilyesmit?": function(message){
 			n(message);
 
 			Show("mom","mom_stand");
 			Show("clock","clock_ticking");
 			PlaySound("clock","dinner_ticking",{loop:-1});
 
-			m("Your grandfather gave it to us.");
+			m("Ezt a nagyapád adta nekünk.");
 
 			Show("nicky","dinner_nicky_sit");
-			n("Oh! Hey mom.");
+			n("Ó, szia anya.");
 			
 			Waiting_End();
 		},
-		"Meow! Meow! Meow! Meow!": function(message){
+		"Miu! Miu! Miu! Miu!": function(message){
 			
-			n("Meow.");
-			n("Meow!");
+			n("Miu.");
+			n("Miu!");
 
 			Show("nicky","dinner_nicky_outrage");
-			n("MEOW!");
+			n("MIU!");
 
 			Show("mom","mom_stand");
 
-			m("Nick, what are you doing?...");
+			m("Nick, mit csinálsz?...");
 
 			Show("clock","clock_ticking");
 			PlaySound("clock","dinner_ticking",{loop:-1});
 			Show("nicky","dinner_nicky_sit");
 
-			n("MEOOOhhhh didn't see you. Ahem. Hey mom.");
+			n("MIUuuhh nem láttalak. Khm. Szia anya.");
 
 			Waiting_End();
 		}
