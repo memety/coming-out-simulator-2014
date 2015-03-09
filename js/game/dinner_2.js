@@ -5,48 +5,48 @@
 
 function Start_Dinner_2(){
 
-	m("Hi sweetie.");
+	m("Szia drága.");
 	Show("mom","mom_sit");
 
 	switch($.waiting_action){
 		case "eat":
-			m("Oh, you started eating without me. You're very impatient.");
-			n("...right.");
+			m("Ó, nélkülem kezdtél enni... Nagyon türelmetlen vagy.");
+			n("...ja.");
 			break;
 		case "wait":
-			m("You could have started without me. No need to let your food get cold.");
-			n("...sure.");
+			m("Elkezdhetted volna nélkülem is. Nem kellett volna megvárnod, hogy kihűljön.");
+			n("...valóban.");
 			break;
 		case "play":
-			m("It's immature to play with your food, you know.");
-			n("Yeah, yeah.");
+			m("Tudod, nagyon éretlen dolog, hogy az étellel játszol.");
+			n("Persze, persze..");
 			break;
 	}
 
-	m("Your father's running late. He'll be joining us for dinner in an hour's time.");
+	m("Apád késik. Egy órával később fog csatlakozni a vacsorához.");
 
 	Choose({
-		"Cool. Let's eat.": function(message){
+		"Rendben. Akkor együnk.": function(message){
 			n(message);
 			n("*nom nom nom*");
 			m(". . .");
-			m("What's your plans for tomorrow?");
+			m("Mik a terveid holnapra?");
 			Start_Dinner_2_1();
 		},
-		"I have something to tell both of you.": function(message){
+		"Van valami, amit mindkettőtöknek el kell mondanom.": function(message){
 			n(message);
-			m("Alright. Tell us both later when he comes back.");
-			n("Oh. Okay.");
+			m("Rendben. Mondd el nekünk, ha ő is hazaért.");
+			n("Oh. Oké.");
 			m(". . .");
 			n("*nom nom nom*");
-			m("So, what's your plans for tomorrow?");
+			m("Szóval, mik a terveid holnapra?");
 			Start_Dinner_2_1();
 		},
-		"There's something I need to tell just you first.": function(message){
+		"Van valami, amit neked kell elmondanom először.": function(message){
 			n(message);
-			m("Hold on Nick, I haven't asked about your day yet!");
-			n("Today was fine.");
-			m("Okay. And what's your plans for tomorrow?");
+			m("Várj Nick, még nem is kérdeztelek a napodról!");
+			n("Jó napom volt.");
+			m("Az jó. És mik a terveid holnapra?");
 			Start_Dinner_2_1();
 		}
 	});
@@ -55,21 +55,21 @@ function Start_Dinner_2(){
 
 function Start_Dinner_2_1(){
 
-	n("Oh. Uh... studying.")
-	n("Yeah. Tomorrow I'm studying.");
-	m("What subject?");
-	n("Er...");
+	n("Ó. Hmm... tanulok.")
+	n("Ja, holnap tanulni fogok.");
+	m("Milyen tárgyat?");
+	n("Öhmm...");
 
 	Choose({
-		"Chemistry.": function(message){
+		"Kémiát.": function(message){
 			$.studying_subject = "Chemistry";
 			Start_Dinner_2_2(message);
 		},
-		"Calculus.": function(message){
+		"Matekot.": function(message){
 			$.studying_subject = "Calculus";
 			Start_Dinner_2_2(message);
 		},
-		"Compsci.": function(message){
+		"Számtech-et.": function(message){
 			$.studying_subject = "Computer Science";
 			Start_Dinner_2_2(message);
 		}
@@ -80,36 +80,36 @@ function Start_Dinner_2_1(){
 function Start_Dinner_2_2(message){
 
 	n(message);
-	m("Good.");
-	m("You really, really could improve your grades in your "+$.studying_subject+" class.");
+	m("Remek.");
+	m("Már nagyon-nagyon ideje lenne jobb "+$.studying_subject+" jegyeket szerezned.");
 	n(". . .");
-	m("So, I'll be at the library tomorrow.");
-	m("Will I see you studying there?");
-	n("Actually, I'm gonna study at Jack's place.");
-	m("Again?");
-	m("You spend a lot of time with him.");
+	m("Szóval, holnap a könyvtárban leszek.");
+	m("Látlak majd ott tanulni?");
+	n("Igazából Jack-hez megyek át tanulni.");
+	m("Megint?");
+	m("Túl sok időt töltesz vele.");
 
 	Choose({
-		"We just study together, that's all.": function(message){
+		"Mi csak együtt tanulunk, ennyi.": function(message){
 			$.relationship = "study";
 			Buddy_1(message);
 		},
-		"Mom, Jack is... more than a friend.": function(message){
+		"Anya, Jack... szóval ő több, mint egy barát.": function(message){
 			
 			$.relationship = "best friend";
 			n(message);
 			
 			$.lying_about_hanging_out = true;
-			m("Oh, like best friends?");
-			n("Um. Well--");
-			m("So you're just hanging out, not studying.");
-			n("We ARE studying!");
+			m("Ó, mint egy legjobb barát?");
+			n("Öhm, nos...--");
+			m("Szóval ti csak szórakoztok tanulás helyett.");
+			n("Mi igenis tanulunk!");
 			m(". . .");
-			m("Alright, just don't lie to me.");
-			n("I'm not.");
+			m("Rendben, csak ne hazudj nekem.");
+			n("Nem hazudok.");
 			Buddy_1_point_5();
 		},
-		"Well yeah, that's what good pals do.": function(message){
+		"Hát igen, mivel jó haverom.": function(message){
 			$.relationship = "friend";
 			Buddy_1(message);
 		}
@@ -128,14 +128,14 @@ function Buddy_1(message){
 
 	if($.relationship!="study"){
 		$.lying_about_hanging_out = true;
-		m("Oh. So you're just hanging out, not studying.");
-		n("We ARE studying!");
+		m("Ó, szóval ti csak szórakoztok tanulás helyett.");
+		n("Mi igenis tanulunk!");
 		m(". . .");
-		m("Alright, just don't lie to me.");
-		n("I'm not.");
+		m("Rendben, csak ne hazudj nekem.");
+		n("Nem hazudok.");
 	}else{
-		m("Okay. I'm just making sure.");
-		n("Of... what?");
+		m("Oké. Csak meg akartam győződni róla.");
+		n("Miről?");
 	}
 
 	Buddy_1_point_5();
@@ -143,82 +143,82 @@ function Buddy_1(message){
 
 function Buddy_Caught_Lying_1(message,callback){
 	n(message);
-	m("Wait...");
-	m("I thought you said you 'just study together'.");
-	m("You didn't tell me you were friends.");
+	m("Várj...");
+	m("Mintha azt mondtad volna, hogy csak együtt tanultok.");
+	m("Nem mondtad, hogy barátok vagytok.");
 	$.lying_about_relationship = true;
 	Choose({
-		"Oops, I meant he's just a studymate.": callback,
-		"Well, he can also be my friend...": callback,
-		"No, I always said we were friends.": callback
+		"Izé, hát úgy értettem, hogy csak tanulótársak vagyunk.": callback,
+		"Hát lehet, hogy barátok leszünk...": callback,
+		"Nem, mindig is azt mondtam, hogy barátok vagyunk.": callback
 	});
 }
 
 function Buddy_1_point_5(){
 
-	m("Just... don't hang around him too much.");
-	m("People might get the wrong idea.");
+	m("Csak...ne lógj vele olyan sokat.");
+	m("Az emberek még a végén rosszat fognak feltételezni.");
 
 	Choose({
-		"Oh. No, yeah, we're just friends.": function(message){
+		"Ó. Nem, mi tényleg csak barátok vagyunk.": function(message){
 			if($.relationship=="study" && !$.lying_about_relationship){
 				Buddy_Caught_Lying_1(message,Buddy_2);
 			}else{
 				Buddy_2(message);
 			}
 		},
-		"The wrong idea might be the right idea.": Buddy_4,
-		"What do you mean by... wrong idea?": Buddy_3
+		"Lehet, hogy valójában jót feltételeznének.": Buddy_4,
+		"Hogy érted azt, hogy... rosszat?": Buddy_3
 	});
 
 }
 
 function Buddy_2(message){
 	n(message);
-	m("Okay.");
+	m("Oké.");
 	if($.lying_about_relationship){
-		m("Just don't lie to me.");
-		n("I won't.");
+		m("Csak ne hazudj nekem.");
+		n("Nem hazudtam.");
 		m(". . .");
-		m("But... about you hanging out with Jack.");
+		m("De... mégis folyton Jack-kel lógsz.");
 	}
-	m("It's just that some people might assume things, since...");
-	m("You know... he looks like...");
-	m("A gay?");
+	m("Csak azért, mert néhányan esetleg feltételezhetnek bizonyos dolgokat, mivel...");
+	m("Tudod... olyan, mintha..");
+	m("Mintha meleg lenne.");
 	Buddy_Choice();
 }
 
 function Buddy_3(message){
 	n(message);
-	m("Just between mother and son, I think he might be... you know...");
-	n("No, what?");
-	m("A gay!");
-	m("He looks and talks like a gay.");
+	m("Csak így köztünk szólva, azt hiszem, ő olyan... na, tudod...");
+	n("Nem, mi?");
+	m("Meleg!");
+	m("Úgy beszél és úgy néz ki, mint egy meleg.");
 	Buddy_Choice();
 }
 
 function Buddy_4(message){
 	n(message);
-	m("Oh, that's like a zen thing, right?");
-	n("Um.");
-	m("Zen is also about nature, and your classmate Jack, he...");
-	m("...you know, doesn't seem natural?");
+	m("Ó, ez ilyen zen-dolog, ugye?");
+	n("Öhm..");
+	m("A zen a természetről szól és a te osztálytársad, Jack, ő...");
+	m("...tudod, természetellenesnek tűnik.");
 	Choose({
-		"You think he's gay.": function(message){
+		"Azt hiszed, meleg.": function(message){
 			n(message);
-			m("Yes!");
-			m("You suspect it, too!");
+			m("Azt!");
+			m("Ahogy te is gyanítod");
 			Buddy_Choice();
 		},
-		"Don't say that about my friend!": function(message){
+		"Ne mondd ezt a barátomról!!": function(message){
 
 			if($.relationship=="study" && !$.lying_about_relationship){
 				Buddy_Caught_Lying_1(message,function(message){
 
 					n(message);
-					m("Okay.");
-					m("Just don't lie to me.");
-					n("I won't.");
+					m("Oké.");
+					m("Csak ne hazudj nekem.");
+					n("Nem hazudtam.");
 					m(". . .");
 
 					m("But yes, even you agree that it's bad to be seen as 'not natural'.");
@@ -231,7 +231,7 @@ function Buddy_4(message){
 			}else{
 
 				n(message);
-				m("I'm just being honest.");
+				m("Én csak próbálok őszinte lenni.");
 				m("But yes, even you agree that it's bad to be seen as 'not natural'.");
 				n("I never said--");
 				m("And I'm just looking out for you! Because he acts like, you know...");
