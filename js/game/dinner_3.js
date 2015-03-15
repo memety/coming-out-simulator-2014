@@ -7,12 +7,12 @@
 
 function Start_Dinner_3(){
 
-	n("Mom.");
+	n("Anya.");
 
 	Choose({
-		"That's why I'm studying more with Jack.": Tutor,
-		"Look, I'm trying. I really am.": Tutor,
-		"My grades are fine.": Tutor
+		"Épp emiatt tanulok többet Jackkel.": Tutor,
+		"Figyelj, én próbálkozok, de tényleg.": Tutor,
+		"A jegyeimmel nincs semmi gond.": Tutor
 	});
 
 }
@@ -20,73 +20,73 @@ function Start_Dinner_3(){
 function Tutor(message){
 
 	n(message);
-	m("I'm worried for you. Jack's not a good influence.");
+	m("Aggódom érted. Jack egyáltalán nincs rád jó hatással.");
 
 	if($.hippies){
-		m("I think his parents might even be drug addicts...");
-		n("What makes you say th--");
+		m("Egyébként is azt hiszem a szülei drogfüggők...");
+		n("Miből gondo--");
 	}else if($.im_a_poet){
-		m("All he does is do poetry.");
-		n("What makes you say th--");
+		m("Mást sem csinál, csak verseket ír.");
+		n("Miből gondo--");
 	}
 	
-	m("I'm getting you a home tutor.");
-	n("...what?");
+	m("Felfogadok melléd egy segédtanárt.");
+	n("...egy mit?");
 
 	if($.studying_subject!=$.studying_subject_2){
-		m("She'll be tutoring you in "+$.studying_subject+" and "+$.studying_subject_2+".");
+		m("Segíteni fog felkészülni "+$.studying_subject+" és "+$.studying_subject_2+".");
 	}else{
-		m("She'll be tutoring you in "+$.studying_subject+".");
+		m("Segíteni fog felkészülni "+$.studying_subject+".");
 	}
 
-	m("Her name is Claire. She's smart, pretty, and Caucasian. She's your age, too.");
+	m("Clairenek hívják. Okos, csinos és fehér. Ráadásul egyidős veled.");
 
 	Choose({
-		"Are you trying to stop me from seeing Jack?": Tutor_Seeing,
-		"Are you trying to matchmake me with her?": Tutor_Matchmake,
-		"Can we talk about tutors another time?": Tutor_Forget
+		"Azt akarod, hogy Jack és én többet ne találkozzunk?": Tutor_Seeing,
+		"Összeakarsz vele hozni?": Tutor_Matchmake,
+		"Nem beszélhetnénk inkább máskor tanárokról?": Tutor_Forget
 	});
 
 }
 
 function Tutor_Seeing(message){
 	n(message);
-	m("I'm sorry, <i>seeing</i> Jack?");
-	m("Be careful how you say that. You make it sound like...");
+	m("Ne haragudj, hogy mi? <i>Találkozni</i> Jackkel?");
+	m("Óvatosan fogalmazz, nehogy úgy értsék, mintha...");
 	
 	Choose({
-		"Like we're dating? Yeah. We are.": function(message){
+		"Mintha járnánk? Pedig igen. Járunk.": function(message){
 			n(message);
 			m(". . .");
 			n(". . .");
-			n("...Hello?");
+			n("...Heló...");
 			m(". . .");
-			n("Anyone there?");
+			n("Van itt valaki?");
 			m(". . .");
 			Threat_School();
 		},
-		"I just meant meeting Jack.": function(message){
+		"Úgy értem, csak simán találkozni vele.": function(message){
 			n(message);
-			m("Okay. Just being clear about some things.");
-			n("Yeah.");
+			m("Rendben. Tisztázzunk néhány dolgot.");
+			n("Oké.");
 			m(". . .");
-			m("Claire's really cute.");
-			n("Sure.");
-			m("She has perky breasts.");
+			m("Claire nagyon aranyos lány.");
+			n("Tényleg az.");
+			m("És jó mellei vannak..");
 			Threat_Tutor();
 		},
-		"We're. Not. Boyfriends.": function(message){
+		"Mi. Nem. Járunk.": function(message){
 			n(message);
 			m(". . .");
-			m("Okay.");
-			m("I never said you were, but... okay.");
-			n("We're friends.");
+			m("Jól van.");
+			m("Sosem állítottam, hogy jártok, de oké.");
+			n("Barátok vagyunk.");
 
 			if($.relationship=="friend"){
-				m("\"Good pals\"...");
+				m("\"Jó barátok\"...");
 			}
 			if($.relationship=="best friend"){
-				m("\"BEST friends\"...");
+				m("\"LEGJOBB barátok\"...");
 			}
 
 			Threat_Tutor();
@@ -97,42 +97,42 @@ function Tutor_Seeing(message){
 
 function Tutor_Matchmake(message){
 	n(message);
-	m("Well, if that's what you want, I could!");
-	n("nooooo.");
-	m("Don't be shy! You're growing up to be a man.");
-	m("And you're going to give me lots of grandkids.");
+	m("Hát, ha ezt akarod, rendben!");
+	n("neeeeeeee.");
+	m("Ne légy szégyenlős! Hamarosan érett férfi leszel!.");
+	m("És sok unokával ajándékozol meg minket.");
 
 	Choose({
-		"Stop it! I haven't even met Claire yet!": function(message){
+		"Állj már le! Még nem is találkoztam Claire-rel!": function(message){
 			n(message);
-			m("Yet!");
-			m("She's coming over tomorrow!");
-			n("What? But I promised Jack--");
-			m("I ironed your best clothes. You'll make a good first impression.");
+			m("...még!");
+			m("Holnap átjön!");
+			n("Mi van? De megígértem Jacknek, hogy--");
+			m("Kivasaltam a legjobb ruháidat. Remek első benyomást fogsz kelteni.");
 			Threat_Tutor();
 		},
-		"The odds of that are 50-50, coz I'm bi.": function(message){
+		"50 százalék az esélye, mivel bi vagyok.": function(message){
 
 			$.admit_bisexuality = true;
 
 			n(message);
-			m("Um. Bi?...");
+			m("Őőő. Bi?...");
 
 			Show("nicky","dinner_nicky_defiant");
 
-			n("Yes. As in BISEXUAL.");
-			n("As in I AM SEXUALLY ATTRACTED TO BOTH MEN AND WOMEN.");
+			n("Így van. BISZEXUÁLIS.");
+			n("Tehát férfiakhoz és nőkhöz egyaránt vonződok szexuálisan.");
 			m(". . .");
 			n(". . .");
 			Threat_School();
 		},
-		"No. I don't ever want to have kids.": function(message){
+		"Nem. Soha nem akarok gyereket.": function(message){
 			n(message);
-			m("You'll change your mind when you grow up.");
-			m("Raising a child is wonderful. Your children will look up to you!");
-			n("...of course, you narcissist.");
-			m("Excuse me?");
-			n("Nothing.");
+			m("Ha majd felnősz, máshogy fogod gondolni.");
+			m("Felnevelni egy gyereket csodálatos! Fel fognak nézni rád!");
+			n("...hát hogyne, te egomán.");
+			m("Hogy mit mondtál?");
+			n("Semmit.");
 			m(". . .");
 			Threat_Tutor();
 		}
@@ -141,41 +141,41 @@ function Tutor_Matchmake(message){
 
 function Tutor_Forget(message){
 	n(message);
-	m("No, because I've already scheduled Claire to come over tomorrow.");
-	n("What?!");
-	n("No. I promised to study with Jack tomorrow.");
+	m("Nem, mert már megbeszéltem Claire-rel a holnapot.");
+	n("Mi van?!");
+	n("Ne csináld, megígértem Jacknek, hogy holnap együtt tanulunk.");
 	m(". . .");
-	m("How long did you want to stay over at his place?");
+	m("Meddig szándékozol nála maradni?");
 
 	Choose({
-		"Overnight.": function(message){
+		"Ott aludnék.": function(message){
 			n(message);
 			m(". . .");
 			n(". . .");
-			n("...Hello?");
-			n("It's not weird. Friends have sleepovers all the time.");
+			n("...Mi az?");
+			n("Nincs ebben semmi különös, a barátok állandóan ezt csinálják.");
 			m(". . .");
 			Threat_School();
 		},
-		"Just the afternoon.": function(message){
+		"Csak délutánig.": function(message){
 			n(message);
 			if($.lying_about_hanging_out){
-				m("I knew it. I caught your lie earlier.");
-				n("Huh?");
+				m("Tudtam. Már korábban is tudtam, hogy nem mondasz igazat.");
+				n("Mi?");
 			}else{
-				m("...I knew it.");
+				m("...Tudtam.");
 			}
-			m("You're just hanging out with him.");
+			m("Nem tanulnátok semmit, csak hülyéskednétek.");
 			Threat_Tutor();
 		},
-		"Maybe an hour or so.": function(message){
+		"Talán egy órát, vagy kicsit többet.": function(message){
 			n(message);
-			m("That's not enough to really get studying done.");
+			m("Annyi idő alatt nem lehet rendesen tanulni.");
 			if($.lying_about_hanging_out){
-				m("I knew it. I caught your lie earlier.");
-				n("Huh?");
+				m("Tudtam. Már korábban is tudtam, hogy nem mondasz igazat.");
+				n("Mi?");
 			}
-			m("You're just hanging out with him.");
+			m("Nem tanulnátok semmit, csak hülyéskednétek.");
 			Threat_Tutor();
 		}
 	});
@@ -186,35 +186,35 @@ function Threat_Tutor(){
 	Show("nicky","dinner_nicky_defiant");
 	
 	n(". . .");
-	m("Claire will be tutoring you every day after school, starting tomorrow.");
+	m("Holnaptól fogva Claire-rel fogsz tanulni minden egyes nap iskola után.");
 
 	Choose({
-		"Every day?! What about my friends?!":function(message){
+		"Minden nap?! Mi lesz a barátaimmal?!":function(message){
 			n(message);
-			m("Sweetie, I'm your friend!");
+			m("Drágám, én vagyok az egyetlen barátod!");
 			n(". . .");
-			m("Also Claire can be your friend. Maybe more than friends.");
+			m("És Claire is lehet a barátod. Talán még több is.");
 			n(". . .");
-			n("Are we done?");
-			m("Just... one more thing.");
+			n("Végeztünk?");
+			m("Csak még valami.");
 			Plot_Twist();
 		},
-		"Okay, but my weekends are free, right?": function(message){
+		"Jó, de a hétvégéim ugye szabadok?": function(message){
 			n(message);
-			m("Yes.");
-			n("Okay. Good that this is all settled now.");
-			m("...Yes.");
+			m("Igen.");
+			n("Oké, akkor ezt megbeszéltük.");
+			m("...Igen.");
 			n(". . .");
-			m("Just... one more thing.");
+			m("Csak még valami.");
 			Plot_Twist();
 		},
-		"What if just DON'T study with Claire?": function(message){
+		"Mi lenneha egyszerűen csak nem tanulnék Claire-rel?": function(message){
 			n(message);
-			m("Well, if you also want to hang out with her, that's good too.");
-			m("Anything to make you more manly.");
-			n("ugh.");
-			m("Oh.");
-			m("One more thing.");
+			m("Hát, ha szeretnél vele azon kívül is találkozni, azzal sincs probléma.");
+			m("Bármi jó, amitől férfiasabb leszel.");
+			n("Hihetetlen vagy...");
+			m("...");
+			m("Még valami...");
 			Plot_Twist();
 		}
 	});
@@ -225,36 +225,36 @@ function Threat_School(){
 
 	$.changing_schools = true;
 	
-	m("You're changing schools.");
+	m("Iskolát fogsz váltani.");
 
 	Show("nicky","dinner_nicky_outrage");
 
-	n("WHAT?!");
-	m("I think it's not just Jack, it's the entire school that's a bad influence on you.");
-	n("ARE YOU SERIOUS.");
-	m("The whole Canadian culture is making you confused about who you are.");
+	n("MI VAN?!");
+	m("Azt hiszem nem csak Jack, de ez az egész iskola rossz hatással van rád.");
+	n("EZ MOST KOMOLY?");
+	m("Ez az egész Kanadai légkör torzítja az önképedet.");
 
 	Show("nicky","dinner_nicky_defiant");
 
 	Choose({
-		"No, it's YOUR Asian culture that's backwards!": function(message){
+		"Szerintem meg a te ázsiai kulturád van kicsit fejjel lefelé!": function(message){
 			n(message);
-			m("Don't be so rude!");
-			m("It's YOUR culture, too!");
+			m("Ne légy illetlen!");
+			m("Ez a te kulturád is!!");
 			n(". . .");
 			Plot_Twist();
 		},
-		"You can't do this to your CHILD!": function(message){
+		"Nem tehetsz a saját gyerekeddel ilyesmit!": function(message){
 			n(message);
-			m("Don't be so rude!");
-			m("I'm your MOTHER, it's my right to do whatever I want with you!");
+			m("Ne légy illetlen!!");
+			m("Az anyádként jogom van bármit megtenni veled!");
 			n(". . .");
 			Plot_Twist();
 		},
-		"Whatever, ALL schools have queer people.": function(message){
+		"Tökmindegy, mindegyik suliban vannak furcsa emberek.": function(message){
 			n(message);
-			m("Don't be so rude!");
-			m("And watch it, I could change my mind and start homeschooling you.");
+			m("Ne légy udvariatlan!");
+			m("Egyébként akár meg is gondolhatom magam és taníthatlak téged ÉN is, itthon.");
 			n(". . .");
 			Plot_Twist();
 		}
@@ -264,8 +264,8 @@ function Threat_School(){
 
 function Plot_Twist(){
 
-	m("Yesterday, when you were supposedly studying with Jack?");
-	m("I know you secretly went off to watch a movie.");
+	m("Tegnap, mikor elvileg tanulni voltál Jacknél?");
+	m("Tudom, hogy valójában ellógtatok a moziba.");
 
 	Show("nicky","dinner_nicky_sit");
 	n(". . .");
@@ -273,20 +273,20 @@ function Plot_Twist(){
 	Show("clock_time","clock_1920");
 
 	Choose({
-		"Oh my god. You read my texts.": function(message){
+		"Jézusom. Elolvastad az üzeneteimet.": function(message){
 			n(message);
-			m("Yes. See how smart you can be when you're not with Jack?");
+			m("Így van. Látod milyen okos is tudsz lenni, így, hogy nem Jackkel vagy?");
 			Plot_Twist_2();
 		},
-		"No, we didn't. We studied.": function(message){
+		"Nem lógtunk ki, tanultunk.": function(message){
 			n(message);
-			m("You are a very stubborn boy.");
-			m("I read your text messages.");
+			m("Nagyon maacs fiú vagy.");
+			m("Elolvastam az üzeneteidet.");
 			Plot_Twist_2();
 		},
-		"What makes you think that?": function(message){
+		"Honnan veszed?": function(message){
 			n(message);
-			m("Because I read your text messages.");
+			m("Elolvastam az üzeneteidet.");
 			Plot_Twist_2();
 		}
 	});
@@ -296,44 +296,44 @@ function Plot_Twist(){
 function Plot_Twist_2(){
 
 	n(". . .");
-	m("Before dinner. I was in your room.");
+	m("Vacsora előtt a szobádban voltam.");
 
 	// Dinner_1
-	m("You yelled out '"+$.what_you_called_out+"' from downstairs, while I unlocked your phone...");
-	m("And read what you and Jack have been sending to each other.");
-	m("I'm your mother. I have the right.");
+	m("Azt kiabáltad, hogy '"+$.what_you_called_out+"' a földszintről, mikor épp a kezemben volt a telefonod...");
+	m("És olvastam, hogy miket írogattatok egymásnak Jackkel.");
+	m("Az anyád vagyok, jogom van ehhez.");
 
 	n(". . .");
 
 	if($.im_a_poet){
-		m("Weird poetry?");
+		m("Furcsa költészet?");
 	}
 	if($.hippies){
-		m("Talking about smoking marijuana?");
+		m("Fűszívásról beszélni?");
 	}
 	if($.im_a_poet || $.hippies){
-		m("Helping you lie to your own mother?");
-		m("What else have you been doing behind my back?");
+		m("Segít hazudni a saját anyádnak?");
+		m("Mi mást csináltál még a hátam mögött?");
 	}
 
 	Choose({
-		"This has to be a bad dream.": function(message){
+		"Ez csak egy rossz álom.": function(message){
 			n(message);
-			m("Like that 'Deception' movie?");
-			n("It's... it's 'Inception'.");
-			m("Don't talk back to me.");
+			m("Mint az az álmos film?");
+			n("Az az Eredet, anya.");
+			m("Ne beszélj vissza.");
 			Plot_Twist_3();
 		},
-		"I'm sorry. I'm so sorry.": function(message){
+		"Nagyon sajnálom.": function(message){
 			n(message);
-			m("I forgive you.");
-			m("You're my child, of course I forgive you.");
+			m("Megbocsátok.");
+			m("Te vagy az egyetlen gyermekem, persze, hogy megbocsátok.");
 			Plot_Twist_3();
 		},
-		"I hate you.": function(message){
+		"Gyűlöllek.": function(message){
 			n(message);
-			m("That's okay.");
-			m("I still love you, Nick.");
+			m("Rendben.");
+			m("Én így is szeretlek, Nick.");
 			Plot_Twist_3();
 		},
 	});
