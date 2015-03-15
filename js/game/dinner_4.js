@@ -5,23 +5,23 @@
 function Start_Dinner_4(){
 
 	n(". . .");
-	m("It's because your dad's almost never home, isn't it?");
-	m("Without a strong male role model, you become confused...");
+	m("Az apád miatt van ez, ugye? Mert soha nem volt otthon.");
+	m("Egy erős férfiminta nélkül össze vagy zavarodva...");
 
 	Choose({
-		"Yeah, coz Dad's SUCH a great role model.": function(message){
+		"Persze, mert apa aztán mintaférfi.": function(message){
 			n(message);
-			m("Nick, no matter what, he's your father. You should love him.");
+			m("Nick, ő az apád, bármi történjék is, szóval szeretned kell.");
 			My_Fault();
 		},
-		"That's not how it works. I'd be bi anyway.": function(message){
+		"Ez nem így működik. Egyébként is bi lennék.": function(message){
 			n(message);
-			m("How do you know?! Are you an expert in psychology?!");
+			m("Honnan tudod? Csak nem lettél hirtelen pszichológus?!");
 			My_Fault();
 		},
-		"You know what? Maybe you're right.": function(message){
+		"Tudod mit, talán igazad van!.": function(message){
 			n(message);
-			m("I know...");
+			m("tudom...");
 			My_Fault();
 		}
 	});
@@ -33,20 +33,20 @@ function My_Fault(){
 	Show("clock_time","clock_1930");
 
 	n(". . .");
-	m("This is all my fault...");
-	m("I told you to be careful around those kinds of people, but I told you too late...");
+	m("Ez mind az én hibám...");
+	m("Mondtam neked, hogy vigyázz az ilyen emberekkel, de túl későn figyelmeztettelek...");
 
 	Show("mom","mom_cry");
 
-	m("[sob]");
-	m("Oh Nick! My poor baby!");
+	m("[szipog]");
+	m("ÓÓ Nick! Drága kisfiam!");
 
 	Show("nicky","dinner_nicky_sit");
 
 	Choose({
-		"Mom... please don't cry...": Cry_1,
-		"Quit your fake crying.": Cry_2,
-		"[cry]": Cry_3
+		"Anya... kérlek ne sírj...": Cry_1,
+		"Hagyd már a műsírást.": Cry_2,
+		"[sír]": Cry_3
 	});
 }
 
@@ -55,12 +55,12 @@ function Cry_1(message){
 	$.crying = "sympathy";
 
 	n(message);
-	m("huu... huu... huu...");
-	n("I'm sorry. About Jack, the lies, everything.");
-	m("owww... owww...");
-	n("I take it all back.");
-	m("sniff...");
-	n("...please...");
+	m("hüü... hüü... hüü...");
+	n("Sajnálom. Jacket, a hazugságokat, mindent.");
+	m("óóó... óó...");
+	n("Visszaszívom.");
+	m("szip...");
+	n("...kérlek...");
 	What_Are_You();
 }
 
@@ -70,12 +70,12 @@ function Cry_2(message){
 	Show("nicky","dinner_nicky_defiant");
 
 	n(message);
-	m("huu... huu... huu...");
-	n("Seriously, it is SO fake.");
-	m("owww... owww...");
-	n("Will you shut up?!");
-	m("sniff...");
-	n("SHUT. UP.");
+	m("hüü... hüü... hüü...");
+	n("Ne már, ez annyira mű.");
+	m("óó... óó...");
+	n("Befognád már?!");
+	m("szip...");
+	n("FOGD. BE.");
 	What_Are_You();
 
 }
@@ -85,15 +85,15 @@ function Cry_3(message){
 	$.crying = "mocking";
 	Show("nicky","dinner_nicky_outrage");
 
-	n("BAWWWWW");
-	m("huu... huu... huu...");
-	n("WAH WAH WAH WAH WAHHH");
-	m("owww... owww...");
-	n("BRRrrRR-BRR-BRbR BWAH BWAHRR rrrRRR-WaahHH WO WO WO RaaahhH");
-	m("sniff...");
+	n("ÁÁÁÁHh");
+	m("hüü... hüü... hüü...");
+	n("HÜÜÜ HÜÜÜÜ HÜÜ");
+	m("óó... óó...");
+	n("BRRrrRR-BRR-BRbR BWAH BWAHRR rrrRRR-WaahHH Vöövö RaaahhH");
+	m("szip...");
 
 	Show("nicky","dinner_nicky_defiant");
-	n("Okay, we done?");
+	n("Oké, befejezted?");
 	What_Are_You();
 
 }
@@ -101,27 +101,27 @@ function Cry_3(message){
 function What_Are_You(){
 
 	m(". . .");
-	m("Nick... what are you?");
-	n("Excuse me?");
+	m("Nick... mi vagy te?");
+	n("Parancsolsz?");
 
 	Show("nicky","dinner_nicky_sit");
 
 	Show("mom","mom_sit");
-	m("What <i>are</i> you?");
+	m("<i>Mi</i> vagy te?");
 
 	Choose({
-		"I'm bisexual.": function(message){
+		"Biszexuális.": function(message){
 
 			$.what_are_you = "bisexual";
 
 			n(message);
 			if($.admit_bisexuality){
-				m("...and you said that means...");
+				m("...és azt mondtad az azt jelenti, hogy...");
 			}
-			n("Sexually attracted to both men and women.");
-			m("You can't be both.")
-			m("You have to pick one.");
-			n("That's... not how it works. At all.");
+			n("szexuálisan vonzódom a férfiakhoz és a nőkhöz is.");
+			m("Az nem lehet.")
+			m("Vagy egyik, vagy másik.");
+			n("Ez... egyáltalán nem így működik.");
 			Have_You_Had_Sex();
 
 		},
@@ -130,21 +130,21 @@ function What_Are_You(){
 			$.what_are_you = "confused";
 
 			n(message);
-			m("...I know.");
-			m("I'm sorry Jack confused you.");
-			m("You're just going through a phase, it's okay.");
+			m("...Tudom.");
+			m("Sajnálom, hogy Jack összezavart.");
+			m("Ez nálad csak egy ilyen időszak.");
 			n(". . .");
-			m("It's okay. It's okay...");
+			m("Minden rendben... Minden rendben...");
 			Have_You_Had_Sex();
 
 		},
-		"I'm your son, dammit.": function(message){
+		"A fiad vagyok, az istenit.": function(message){
 
 			$.what_are_you = "son";
 
 			n(message);
 			n(". . .");
-			n("Isn't that enough?");
+			n("Nem elég ennyi?");
 			Have_You_Had_Sex();
 
 		}
@@ -153,23 +153,23 @@ function What_Are_You(){
 
 function Have_You_Had_Sex(){
 	m(". . .");
-	m("Did you have sex with Jack.");
+	m("Lefeküdtél Jackel?");
 	Choose({
 		"Yes.": function(message){
 			n(message);
-			m("[DRY HEAVE]");
+			m("[ZIHÁL]");
 			Have_You_Had_Sex_2();
 		},
 		"No.": function(message){
 			n(message);
-			m("Please stop lying... I saw your texts...");
-			n("We were just sexting, we didn't actually--");
-			m("...and your photos...");
+			m("Kérlek ne hazudj... Olvastam az smseidet...");
+			n("Csak smseztünk, de AZT nem csináltuk.");
+			m("...és a képeid...");
 			Have_You_Had_Sex_2();
 		},
-		"I'm not saying.": function(message){
+		"Nem mondom meg.": function(message){
 			n(message);
-			m("oh my god... you did.");
+			m("Jézusom... szóval igen.");
 			Have_You_Had_Sex_2();
 		}
 	});
@@ -178,33 +178,33 @@ function Have_You_Had_Sex(){
 function Have_You_Had_Sex_2(){
 
 	n(". . .");
-	m("Which... one of you is the woman?");
+	m("Melyikőtök a... lány?");
 
 	Show("nicky","dinner_nicky_outrage");
 
-	n("OH COME ON!");
-	n("That's like asking which chopstick is the spoo--");
-	m("Which one of you?...");
+	n("NE MÁR!");
+	n("Ez olyan, mintha azt kérdeznéd melyik evőpálcika a kaná--");
+	m("Melyikőtök?...");
 
 	Show("nicky","dinner_nicky_defiant");
 
 	Choose({
-		"I'm usually the bottom.":function(message){
+		"Általában én vagyok alul.":function(message){
 			$.top_or_bottom = "bottom";
 
 			n(message);
 			Throw_Up();
 		},
-		"Jack is, mostly.":function(message){
+		"Jack, többnyire.":function(message){
 			$.top_or_bottom = "top";
 
 			n(message);
-			m("Th-that... means you could still be straight! R-right?...");
-			m("If... you know... you're the one who puts your...");
-			m("your...");
+			m("E-ez... azt jelenti, hogy még lehetsz hetero, ugye?...");
+			m("Ha... tudod... te vagy az, aki beteszi a...");
+			m("a...");
 			Throw_Up();
 		},
-		"We take turns.":function(message){
+		"Felváltva csináljuk.":function(message){
 			$.top_or_bottom = "versatile";
 
 			n(message);
@@ -223,9 +223,9 @@ function Throw_Up(){
 	Wait(1000);
 
 	Choose({
-		"what.": Father_Soon,
-		"whaaat.": Father_Soon,
-		"whaaaaaaaaaaaaaaat.": Father_Soon
+		"mi?.": Father_Soon,
+		"miiii?": Father_Soon,
+		"mi vaaaaaan?": Father_Soon
 	});
 
 }
@@ -237,67 +237,67 @@ function Father_Soon(message){
 	Show("mom","mom_sit");
 
 	m(". . .");
-	m("Your father will be back soon.");
-	n("The food's cold. Well, except for the spot you just uh, reversed, on.");
-	m("Your dad's late. Must have been a stressful day at work.");
-	m("So... please... when he's back...");
-	m("Promise me you'll keep all this secret?");
+	m("Apád nemsokára itthon lesz.");
+	n("Kihűlt a kaja. Kivéve azt a részét, ahova... őő... visszatettél egy keveset.");
+	m("Apád késik. Biztos feszült napja volt.");
+	m("Úgyhogy légyszíves... ha visszajön...");
+	m("Megígéred, hogy ezt az egészet titokban tartod?");
 	n(". . .");
 
-	m("Don't tell him about Jack.");
+	m("Ne beszélj neki Jackről.");
 
 	switch($.what_are_you){
 		case "bisexual":
-			m("Don't tell him you think you're bisexual.");
+			m("Ne mondd el neki ezt a biszexuális-dolgot.");
 			break;
 		case "confused":
-			m("Don't tell him you're confused about your sexuality.");
+			m("Ne mondd neki ezt a szexuális zavarodottság-dolgot.");
 			break;
 		case "son":
-			m("Don't tell him you lied to us so you could... do things with Jack.");
+			m("Ne mondd neki, hogy hazudtál mindkettőnknek, azért hogy Jackel... találkozgathass.");
 			break;
 	}
 
 	switch($.top_or_bottom){
 		case "top":
-			m("Don't tell him you make Jack a woman.");
+			m("Ne mondd neki, hogy Jack... nőként viselkedik.");
 			break;
 		case "bottom":
-			m("Don't tell him you act like a woman with Jack.");
+			m("Ne mondd neki, hogy... nőként viselkedsz Jackkel..");
 			break;
 		case "versatile":
-			m("Don't tell him you and Jack both act like women.");
+			m("Ne mondd neki, hogy mindketten... nőként viselkedtek.");
 			break;
 	}
 
-	m("Okay?...");
+	m("Rendben?...");
 
 	Choose({
-		"Okay.": function(message){
+		"Rendben.": function(message){
 			$.promise_silence = "yes";
 			
 			n(message);
-			m("Okay.");
+			m("Oké.");
 			m(". . .");
-			m("Your father's here.");
+			m("Megjött.");
 			Father_Soon_2();
 		},
-		"No. Not okay.": function(message){
+		"Nem, nincs rendben.": function(message){
 			$.promise_silence = "no";
 			
 			n(message);
-			m("Nick, no no no, please--");
-			m("Oh no. Your father's here.");
+			m("Nick, ne csináld ezt, kérlek.");
+			m("Jaj ne, megjött.");
 			Father_Soon_2();
 		},
-		"As long as you don't tell him, either.": function(message){
+		"Csak ha te sem említed neki.": function(message){
 			$.promise_silence = "tit for tat";
 			
 			n(message);
-			m("I won't.");
-			n("Promise me you won't.");
-			m("I pr--");
-			m("Shhh. Your father's here.");
+			m(Nem fogom.");
+			n("Ígérd meg!");
+			m("Ígé--");
+			m("Cssst! Itt van!.");
 			Father_Soon_2();
 		}
 	});
