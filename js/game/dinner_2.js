@@ -62,15 +62,15 @@ function Start_Dinner_2_1(){
 
 	Choose({
 		"Kémiát.": function(message){
-			$.studying_subject = "kémia";
+			$.studying_subject = "kémiá";
 			Start_Dinner_2_2(message);
 		},
 		"Matekot.": function(message){
-			$.studying_subject = "matematika";
+			$.studying_subject = "matematiká";
 			Start_Dinner_2_2(message);
 		},
 		"Számtech-et.": function(message){
-			$.studying_subject = "számítástechnika";
+			$.studying_subject = "számítástechniká";
 			Start_Dinner_2_2(message);
 		}
 	});
@@ -81,7 +81,7 @@ function Start_Dinner_2_2(message){
 
 	n(message);
 	m("Remek.");
-	m("Már nagyon-nagyon ideje lenne jobb "+$.studying_subject+" jegyeket szerezned.");
+	m("Már nagyon-nagyon ideje lenne "+$.studying_subject+"ból jobb jegyeket szerezned.");
 	n(". . .");
 	m("Szóval, holnap a könyvtárban leszek.");
 	m("Látlak majd ott tanulni?");
@@ -321,15 +321,15 @@ function Buddy_Aftermath_2(message){
 
 	Choose({
 		"Számtech-et?": function(message){
-			$.studying_subject_2 = "számítástechnikát";
+			$.studying_subject_2 = "számítástechniká";
 			Grades_Start(message);
 		},
 		"Kémiát?": function(message){
-			$.studying_subject_2 = "kémiát";
+			$.studying_subject_2 = "kémiá";
 			Grades_Start(message);
 		},
 		"Matekot?": function(message){
-			$.studying_subject_2 = "matematikát";
+			$.studying_subject_2 = "matematiká";
 			Grades_Start(message);
 		}
 	});
@@ -352,8 +352,8 @@ function Grades_Start(message){
 }
 
 function Grades_Start_1(){
-	m("Először "+$.studying_subject+" mondtál.");
-	m("Most pedig "+$.studying_subject_2+"?");
+	m("Először "+$.studying_subject+"t mondtál.");
+	m("Most pedig "+$.studying_subject_2+"t.");
 	$.lying_about_studying = true;
 	n("Anya, csak összezavarodtam...");
 	if($.lying_about_hanging_out || $.lying_about_relationship){
