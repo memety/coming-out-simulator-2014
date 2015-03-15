@@ -14,16 +14,16 @@ function Start(){
 
 	N("<b>COMING OUT SIMULATOR 2014</b>");
 	N("Egy valós eseményeken alapuló játék kiegészítve kitalált dolgokkal.");
-	N("Helló játékos! Üdv a játékban.");
+	N("Helló és üdv a játékban.");
 	N("Mit szeretnél csinálni?");
 
 	Choose({
 		"Szeretnék játszani ezzel az, öhmm... izével.": Play,
 		"Te ki vagy? (Háttérsztori)": function(){
-			Credits("Who are you?");
+			Credits("Te ki vagy?");
 		},
 		"Hmm, mesélj a játékról! (Játékleírás)": function(){
-			About("Hm, tell me more.");
+			About("Hmm, mesélj a játékról!");
 		}
 	});
 
@@ -52,7 +52,7 @@ function Play(message){
 	// Asked both
 	if($.asked_about && $.asked_credits){
 		p(". . .");
-		p("Why did you make that a clickable option, when it was the only option left.");
+		p("Miért lehet többféle válaszra is klikkelni, ha csak egyféle végkimenetel van?");
 		N("Gőzöm sincs.");
 	// Asked either
 	}else if($.asked_about || $.asked_credits){
@@ -108,12 +108,12 @@ function Play_2(){
 	}
 
 	N("Ez a játék azokat a dialógusokat tartalmazza, amiket én folytattam a szüleimmel és az exbarátommal.");
-	N("Olyan dolgokkal, amiket mi mondtunk, amit kellett volna mondanunk és amit soha nem mondtunk.");
+	N("Olyan dolgokkal, amiket mi mondtunk, amit kellett volna mondanunk és amiket soha nem mondtunk.");
 	N("Nem számít, hogy melyik melyik.");
 	N("Többé már nem.");
 
 	Choose({
-		"De nem lehet megnyerni egy játékot helyes válaszok nélkül!": function(message){
+		"De nem lehet megnyerni egy játékot helyes válaszok nélkül! Vagy?": function(message){
 			$.main_menu_convo_2 = 2;
 
 			p(message);
@@ -121,7 +121,7 @@ function Play_2(){
 			p(". . .");
 			Play_3();
 		},
-		"Egy kicsit depressziós vagy, nem? Mármint ez eléggé lehangoló.": function(message){
+		"Kicsit depressziós vagy, nem? Mármint ez elég lehangoló.": function(message){
 			$.main_menu_convo_2 = 1;
 
 			p(message);
@@ -129,7 +129,7 @@ function Play_2(){
 			p("Szóval ez egy igen.");
 			Play_3();
 		},
-		"Szóval akkor ez az igaz történeten alapuló játék tele van hazugságokkal?": function(message){
+		"Akkor ez az igaz történeten alapuló játék tele van hazugságokkal?": function(message){
 			$.main_menu_convo_2 = 3;
 
 			p(message);
@@ -143,7 +143,7 @@ function Play_2(){
 
 function Play_3(){
 
-	N("A játéksorán a 2010-es önmagammal fogsz játszani.");
+	N("A játék során a 2010-es önmagammal fogsz játszani.");
 	if(!$.asked_credits){
 		N("Ha nem olvastad el a háttérsztorit, akkor annyit rólam, hogy a (még nem teljesen hivatalos) nevem Nick Case. Csak, hogy tudd.");
 		p("Öhm, oké.");
@@ -201,7 +201,7 @@ function Credits(message){
 	if($.asked_about){
 		SipCoffee(message);
 	}else{
-		SipCoffee("Who are you?");
+		SipCoffee("Te ki vagy?");
 	}
 	
 	N("Ó, milyen goromba vagyok! Hadd mutatkozzam be.");
@@ -212,7 +212,7 @@ function Credits(message){
 	if($.asked_about){
 		p("Mintha az előbb azt mondtad volna, hogy ez a saját történeted, ugye?");
 	}else{
-		p("Akkor te is csináltad ezt a játékot?");
+		p("Mindegy. Végül is akkor te csináltad ezt a játékot, ugye?");
 	}
 
 	N("Így van, írója, programozója és grafikusa vagyok egyben a Coming Out Simulator 2014-nek.");
@@ -224,10 +224,10 @@ function Credits(message){
 		N("Nos, ez nem csak rólam szól.");
 		N("Egyébként a zajok és zenék különböző nyilvánosan hozzáférhető forrásokból származnak.");
 	}else{
-		N("A zajok és zenék különböző nyilvánosan hozzáférhető forrásokból származnak.");
+		N("Egyébként zajok és zenék különböző nyilvánosan hozzáférhető forrásokból származnak.");
 	}
 
-	N("Bár többnyira csak én vagyok a játék mögött...");
+	N("Bár többnyire csak én vagyok a játék mögött...");
 	N("...a sztori mögött sok ember van.");
 
 	if($.asked_about){
@@ -238,7 +238,7 @@ function Credits(message){
 		Choose({
 			"Most, hogy így ezt megbeszéltük, játszhatunk?": Play,
 			"Miért csináltad ezt meg? (Játékleírás)": function(){
-				About("Why'd you make this?");
+				About("Miért csináltad ezt meg?");
 			}
 		});
 	}
@@ -252,26 +252,26 @@ function About(message){
 	SipCoffee(message);
 
 	if($.asked_credits){
-		N("Szerettem volna elmesélni a történetembet.");
+		N("Szerettem volna elmesélni a történetemet.");
 	}else{
 		N("Ez a játék...");
 		N("...több egy társalgás-szimulátornál, nekem ez tényleg...");
-		N("...iegy nagyon személyes történet.");
+		N("...egy nagyon személyes történet.");
 	}
 	
 	p("Természetesen. Te kis nárcisztikus.");
-	N("Hah, naná.");
+	N("Természetesen.");
 
 	if($.asked_credits){
-		p("Habár nem is, elvégre egy ha az lennél, az igazi nevedet használnád.");
+		p("Habár ha tényleg az lennél, az igazi nevedet használnád.");
 		N("Már mondtam neked hogy ez az IGAZI ne-..");
 		p("Okééé, okéé, felfogtam. Bizarr vagy.");
 	}
 
 	N("Ezt a játékot a #Nar8 Game Jam-re csináltam. Jó kifogás volt a gép előtt ülésre és biztosított egy határidőt is.");
-	p("Gondolom az utolsó pillanatig halogattad az elküldését, ugye.");
+	p("Gondolom az utolsó pillanatig halogattad az elküldését, ugye?");
 	N("Hát ja.");
-	N("Jut eszembe, ez a játék nem áll szerzői jogvédelem alatt, és nyilvánosan hozzáférhető tárhelyen van tárolva.");
+	N("Jut eszembe, ez a játék nem áll szerzői jogvédelem alatt és nyilvánosan hozzáférhető tárhelyen van tárolva.");
 	N("Nyílt forráskódú, akárcsak a szexualitásom.");
 
 	p("Jesszus, ez egy borzalmas szóvicc volt.");
@@ -285,8 +285,8 @@ function About(message){
 	}else{
 		Choose({
 			"Túl vagyunk a rossz szóvicceken is, most már játszhatunk végre?": Play,
-			"Szóval ki is vagy te? (Credits)": function(){
-				Credits("So who ARE you?");
+			"Szóval ki is vagy te? (Háttérsztori)": function(){
+				Credits("Szóval ki is vagy te?");
 			}
 		});
 	}
