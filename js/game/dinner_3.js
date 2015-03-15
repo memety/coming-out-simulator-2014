@@ -34,9 +34,9 @@ function Tutor(message){
 	n("...egy mit?");
 
 	if($.studying_subject!=$.studying_subject_2){
-		m("Segíteni fog felkészülni "+$.studying_subject+" és "+$.studying_subject_2+".");
+		m("Segíteni fog felkészülni "+$.studying_subject+"ból és "+$.studying_subject_2+"ból.");
 	}else{
-		m("Segíteni fog felkészülni "+$.studying_subject+".");
+		m("Segíteni fog felkészülni "+$.studying_subject+"ból.");
 	}
 
 	m("Clairenek hívják. Okos, csinos és fehér. Ráadásul egyidős veled.");
@@ -59,9 +59,9 @@ function Tutor_Seeing(message){
 			n(message);
 			m(". . .");
 			n(". . .");
-			n("...Heló...");
+			n("Hahó?");
 			m(". . .");
-			n("Van itt valaki?");
+			n("Öhm, anya... Itt vagy?");
 			m(". . .");
 			Threat_School();
 		},
@@ -116,12 +116,12 @@ function Tutor_Matchmake(message){
 			$.admit_bisexuality = true;
 
 			n(message);
-			m("Őőő. Bi?...");
+			m("Öhm... Bi?");
 
 			Show("nicky","dinner_nicky_defiant");
 
-			n("Így van. BISZEXUÁLIS.");
-			n("Tehát férfiakhoz és nőkhöz egyaránt vonződok szexuálisan.");
+			n("Így van. Bi, mint BISZEXUÁLIS.");
+			n("Tehát férfiakhoz és nőkhöz egyaránt vonzódok szexuálisan.");
 			m(". . .");
 			n(". . .");
 			Threat_School();
@@ -152,7 +152,7 @@ function Tutor_Forget(message){
 			n(message);
 			m(". . .");
 			n(". . .");
-			n("...Mi az?");
+			n("Mi az?");
 			n("Nincs ebben semmi különös, a barátok állandóan ezt csinálják.");
 			m(". . .");
 			Threat_School();
@@ -163,7 +163,7 @@ function Tutor_Forget(message){
 				m("Tudtam. Már korábban is tudtam, hogy nem mondasz igazat.");
 				n("Mi?");
 			}else{
-				m("...Tudtam.");
+				m("Tudtam.");
 			}
 			m("Nem tanulnátok semmit, csak hülyéskednétek.");
 			Threat_Tutor();
@@ -203,7 +203,7 @@ function Threat_Tutor(){
 			n(message);
 			m("Igen.");
 			n("Oké, akkor ezt megbeszéltük.");
-			m("...Igen.");
+			m("Igen.");
 			n(". . .");
 			m("Csak még valami.");
 			Plot_Twist();
@@ -211,8 +211,8 @@ function Threat_Tutor(){
 		"Mi lenneha egyszerűen csak nem tanulnék Claire-rel?": function(message){
 			n(message);
 			m("Hát, ha szeretnél vele azon kívül is találkozni, azzal sincs probléma.");
-			m("Bármi jó, amitől férfiasabb leszel.");
-			n("Hihetetlen vagy...");
+			m("Bármi mehet felőlem, amitől férfiasabb leszel.");
+			n("Ez... Ehh, hihetetlen vagy...");
 			m("...");
 			m("Még valami...");
 			Plot_Twist();
@@ -232,7 +232,7 @@ function Threat_School(){
 	n("MI VAN?!");
 	m("Azt hiszem nem csak Jack, de ez az egész iskola rossz hatással van rád.");
 	n("EZ MOST KOMOLY?");
-	m("Ez az egész Kanadai légkör torzítja az önképedet.");
+	m("Ez az egész kanadai légkör torzítja az önképedet.");
 
 	Show("nicky","dinner_nicky_defiant");
 
@@ -240,14 +240,14 @@ function Threat_School(){
 		"Szerintem meg a te ázsiai kulturád van kicsit fejjel lefelé!": function(message){
 			n(message);
 			m("Ne légy illetlen!");
-			m("Ez a te kulturád is!!");
+			m("Ez ugyanúgy a te kulturád is!!");
 			n(". . .");
 			Plot_Twist();
 		},
 		"Nem tehetsz a saját gyerekeddel ilyesmit!": function(message){
 			n(message);
-			m("Ne légy illetlen!!");
-			m("Az anyádként jogom van bármit megtenni veled!");
+			m("Ne légy szemtelen!!");
+			m("Anyádként jogom van bármit megtenni veled!");
 			n(". . .");
 			Plot_Twist();
 		},
@@ -264,8 +264,8 @@ function Threat_School(){
 
 function Plot_Twist(){
 
-	m("Tegnap, mikor elvileg tanulni voltál Jacknél?");
-	m("Tudom, hogy valójában ellógtatok a moziba.");
+	m("Tegnap, mikor elvileg tanulni voltál Jacknél...");
+	m("...Tudom, hogy valójában ellógtatok a moziba.");
 
 	Show("nicky","dinner_nicky_sit");
 	n(". . .");
@@ -275,12 +275,12 @@ function Plot_Twist(){
 	Choose({
 		"Jézusom. Elolvastad az üzeneteimet.": function(message){
 			n(message);
-			m("Így van. Látod milyen okos is tudsz lenni, így, hogy nem Jackkel vagy?");
+			m("Így van. Látod milyen okos is tudsz lenni, ha éppen nem Jackkel vagy?");
 			Plot_Twist_2();
 		},
 		"Nem lógtunk ki, tanultunk.": function(message){
 			n(message);
-			m("Nagyon maacs fiú vagy.");
+			m("Nagyon makacsul ragaszkodsz a hazugságaidhoz.");
 			m("Elolvastam az üzeneteidet.");
 			Plot_Twist_2();
 		},
@@ -300,19 +300,19 @@ function Plot_Twist_2(){
 
 	// Dinner_1
 	m("Azt kiabáltad, hogy '"+$.what_you_called_out+"' a földszintről, mikor épp a kezemben volt a telefonod...");
-	m("És olvastam, hogy miket írogattatok egymásnak Jackkel.");
+	m("És elolvastam, hogy miket írogattatok egymásnak Jackkel.");
 	m("Az anyád vagyok, jogom van ehhez.");
 
 	n(". . .");
 
 	if($.im_a_poet){
-		m("Furcsa költészet?");
+		m("Furcsa költészet, mi?");
 	}
 	if($.hippies){
-		m("Fűszívásról beszélni?");
+		m("Miért beszélgettetek a füvezésről?");
 	}
 	if($.im_a_poet || $.hippies){
-		m("Segít hazudni a saját anyádnak?");
+		m("Hogy van képe segíteni neked hazudni a saját anyádnak?");
 		m("Mi mást csináltál még a hátam mögött?");
 	}
 
