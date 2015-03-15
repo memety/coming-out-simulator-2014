@@ -19,37 +19,37 @@ function Start_Outro(){
 	///////////////////////////////
 
 	if($.breaking_up_soon){
-		N("And then we broke up three days later.");
+		N("Aztán három hét múlva szakítottunk.");
 	}else{
-		N("And then we broke up three weeks later.");
+		N("Aztán három hét múlva szakítottunk.");
 	}
 
 	// Weave - intro
 	if($.main_menu_convo_1==1){
 		p(". . .");
-		N("Told you this didn't end in gay unicorns.");
+		N("Mondtam, hogy nem meleg unikornisokkal végződik majd a sztori.");
 	}else if($.main_menu_convo_1==3){
 		p(". . .");
-		N("Told you. Not blood, but tears.");
+		N("Megmondtam. Semmi vér, csak könnyek.");
 	}else if($.main_menu_convo_2==1){
 		p(". . .");
-		N("You were right. I'm a bit of a downer.");
+		N("Igazad van. Kicsit depressziós vagyok.");
 	}
 
 	Choose({
-		"MY FEELS.":function(message){
+		"Ez nagyon... megindító.":function(message){
 			p(message);
-			N("Let the feels flow, my friend.");
+			N("Engedd szabadjára az érzéseidet, barátom.");
 			Closure();
 		},
-		"Aw, come on, that's cold dude.":function(message){
+		"Ó, jesszus, ez rideg, haver.":function(message){
 			p(message);
-			N("I don't deny that.");
+			N("Az, nem tagadom.");
 			Closure();
 		},
-		"Can't say I didn't see that coming...":function(message){
+		"Nem számítottam rá, hogy ez következik majd...":function(message){
 			p(message);
-			N("Yeah... Jack and I saw it coming, too.");
+			N("Hát ja... Mi se számítottunk rá.");
 			Closure();
 		}
 	});
@@ -69,12 +69,12 @@ function Closure(){
 	Show("cup","cup_steam");
 
 	N("Which reminds me. Many of the characters have been swapped around.");
-	N("All names have been changed, except mine.");
-	N("I left my little brother out entirely, because he's innocent.");
-	N("And I put my Father back in, even though he'd left the family long before 2010.");
+	N("Minden nevet megváltoztattam természetesen, kivéve az enyémet.");
+	N("Ezt a kicsöcsém érdekében tettem, mert ő még olyan ártatlan.");
+	N("És visszatettem a történetbe az apámat, aki egyébként még 2010 előtt elhagyta a családunkat.");
 
 	if($.main_menu_convo_2==3){
-		N("Like you said, this 'true' game is full of lies.");
+		N("Látod mondtam, ez egy igaz történeten alapuló játék tele hazugságokkal.");
 	}
 	
 	p("You could have at least given me a different colour.");
