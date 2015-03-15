@@ -208,7 +208,7 @@ function Threat_Tutor(){
 			m("Csak még valami.");
 			Plot_Twist();
 		},
-		"Mi lenneha egyszerűen csak nem tanulnék Claire-rel?": function(message){
+		"Mi lenne, ha egyszerűen csak nem tanulnék Claire-rel?": function(message){
 			n(message);
 			m("Hát, ha szeretnél vele azon kívül is találkozni, azzal sincs probléma.");
 			m("Bármi mehet felőlem, amitől férfiasabb leszel.");
@@ -265,7 +265,7 @@ function Threat_School(){
 function Plot_Twist(){
 
 	m("Tegnap, mikor elvileg tanulni voltál Jacknél...");
-	m("...Tudom, hogy valójában ellógtatok a moziba.");
+	m("...tudom, hogy valójában ellógtatok a moziba.");
 
 	Show("nicky","dinner_nicky_sit");
 	n(". . .");
