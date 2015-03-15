@@ -5,7 +5,7 @@
 function Start_Dinner_4(){
 
 	n(". . .");
-	m("Az apád miatt van ez, ugye? Mert soha nem volt otthon.");
+	m("Az apád miatt van ez, ugye? Mert soha nincs otthon.");
 	m("Egy erős férfiminta nélkül össze vagy zavarodva...");
 
 	Choose({
@@ -21,7 +21,7 @@ function Start_Dinner_4(){
 		},
 		"Tudod mit, talán igazad van!.": function(message){
 			n(message);
-			m("tudom...");
+			m("Tudom.");
 			My_Fault();
 		}
 	});
@@ -46,7 +46,7 @@ function My_Fault(){
 	Choose({
 		"Anya... kérlek ne sírj...": Cry_1,
 		"Hagyd már a műsírást.": Cry_2,
-		"[sír]": Cry_3
+		"[nem reagálsz a sírásra]": Cry_3
 	});
 }
 
@@ -101,7 +101,7 @@ function Cry_3(message){
 function What_Are_You(){
 
 	m(". . .");
-	m("Nick... mi vagy te?");
+	m("Nick... mégis mi vagy te?");
 	n("Parancsolsz?");
 
 	Show("nicky","dinner_nicky_sit");
@@ -125,16 +125,16 @@ function What_Are_You(){
 			Have_You_Had_Sex();
 
 		},
-		"I'm just confused.": function(message){
+		"Csak össze vagyok zavarodva.": function(message){
 
 			$.what_are_you = "confused";
 
 			n(message);
-			m("...Tudom.");
+			m("Tudom.");
 			m("Sajnálom, hogy Jack összezavart.");
-			m("Ez nálad csak egy ilyen időszak.");
+			m("Ez nálad biztosan csak egy átmeneti állapot.");
 			n(". . .");
-			m("Minden rendben... Minden rendben...");
+			m("Minden rendben lesz... Minden rendben lesz...");
 			Have_You_Had_Sex();
 
 		},
@@ -164,7 +164,7 @@ function Have_You_Had_Sex(){
 			n(message);
 			m("Kérlek ne hazudj... Olvastam az smseidet...");
 			n("Csak smseztünk, de AZT nem csináltuk.");
-			m("...és a képeid...");
+			m("...de a képeid...");
 			Have_You_Had_Sex_2();
 		},
 		"Nem mondom meg.": function(message){
@@ -184,7 +184,7 @@ function Have_You_Had_Sex_2(){
 
 	n("NE MÁR!");
 	n("Ez olyan, mintha azt kérdeznéd melyik evőpálcika a kaná--");
-	m("Melyikőtök?...");
+	m("Melyikőtök?");
 
 	Show("nicky","dinner_nicky_defiant");
 
@@ -239,8 +239,8 @@ function Father_Soon(message){
 	m(". . .");
 	m("Apád nemsokára itthon lesz.");
 	n("Kihűlt a kaja. Kivéve azt a részét, ahova... őő... visszatettél egy keveset.");
-	m("Apád késik. Biztos feszült napja volt.");
-	m("Úgyhogy légyszíves... ha visszajön...");
+	m("SZÓVAL, apád késik. Biztos feszült napja volt.");
+	m("Úgyhogy légyszíves, ha hazajön...");
 	m("Megígéred, hogy ezt az egészet titokban tartod?");
 	n(". . .");
 
@@ -254,23 +254,23 @@ function Father_Soon(message){
 			m("Ne mondd neki ezt a szexuális zavarodottság-dolgot.");
 			break;
 		case "son":
-			m("Ne mondd neki, hogy hazudtál mindkettőnknek, azért hogy Jackel... találkozgathass.");
+			m("Ne mondd neki, hogy hazudtál mindkettőnknek, csak azért, hogy Jackkel... találkozgathass.");
 			break;
 	}
 
 	switch($.top_or_bottom){
 		case "top":
-			m("Ne mondd neki, hogy Jack... nőként viselkedik.");
+			m("És ne mondd neki, hogy Jack... nőként viselkedik.");
 			break;
 		case "bottom":
-			m("Ne mondd neki, hogy... nőként viselkedsz Jackkel..");
+			m("És ne mondd neki, hogy... nőként viselkedsz Jackkel..");
 			break;
 		case "versatile":
-			m("Ne mondd neki, hogy mindketten... nőként viselkedtek.");
+			m("És ne mondd neki, hogy mindketten... nőként viselkedtek.");
 			break;
 	}
 
-	m("Rendben?...");
+	m("Rendben?");
 
 	Choose({
 		"Rendben.": function(message){
@@ -282,7 +282,7 @@ function Father_Soon(message){
 			m("Megjött.");
 			Father_Soon_2();
 		},
-		"Nem, nincs rendben.": function(message){
+		"Nem, egyáltalán nincs rendben.": function(message){
 			$.promise_silence = "no";
 			
 			n(message);
