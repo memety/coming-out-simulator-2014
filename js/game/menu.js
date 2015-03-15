@@ -90,8 +90,7 @@ function Play(message){
 			$.main_menu_convo_1 = 3;
 
 			p(message);
-			N("Uh, kicsit eltúlzod a dolgod, a történetem azért nem ennyire tragikus.");
-			N("Although that's kind of a glass one-hundredths-full interpretation.");
+			N("Uh, kicsit eltúlzod a dolgod, a történetem azért nem ENNYIRE tragikus.");
 			p("vééééééééér");
 			N("Egyébként...");
 			Play_2();
@@ -152,7 +151,7 @@ function Play_3(){
 	var whatISay;
 	switch($.main_menu_convo_1){
 		case 1: whatISay = "Ez a játék nem meleg unikornisokkal fog végződni. "; break;
-		case 2: whatISay = "Ez a játék egy előbújás, egy előtörténet és egy múlttal való kiegyezés egyben. "; break;
+		case 2: whatISay = "Ez a játék egy előbújás, egy előtörténet és a múlttal való kiegyezés is egyben. "; break;
 		case 3: whatISay = "Ez a játék nem vérrel, hanem könnyekkel fog végződni. "; break;
 	}
 	switch($.main_menu_convo_2){
@@ -182,7 +181,7 @@ function Play_3(){
 	
 	N("Amikor játszol...");
 	N("Bölcsen válogasd meg a szavaidat.");
-	N("Minden karakter fog emlékezni mindenre, amit nekik mondtál. Vagy nem mondtál.");
+	N("Minden karakter emlékezni fog mindenre, amit nekik mondtál. Vagy nem mondtál.");
 	p("Jaa. Ennek ellenére te generáltad a választási lehetőségeimet a főmenüben.");
 	N("Nagyjából.");
 
@@ -227,7 +226,7 @@ function Credits(message){
 		N("Egyébként zajok és zenék különböző nyilvánosan hozzáférhető forrásokból származnak.");
 	}
 
-	N("Bár többnyire csak én vagyok a játék mögött...");
+	N("Bár többnyire a játék mögött csak én vagyok...");
 	N("...a sztori mögött sok ember van.");
 
 	if($.asked_about){
