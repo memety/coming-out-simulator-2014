@@ -221,10 +221,10 @@ function Buddy_4(message){
 					n("Nem hazudtam.");
 					m(". . .");
 
-					m("But yes, even you agree that it's bad to be seen as 'not natural'.");
-					n("I never said--");
-					m("And I'm just looking out for you! Because he acts like, you know...");
-					m("A gay!");
+					m("Viszont azt te is elfogadod, hogy rossz dolog, ha valaki ilyen természetellenesnek tűnik.");
+					n("Éé-én ezt soha nem mondtam...");
+					m("Énn csak próbállak megóvni téged ettől! Mert ő tudod, úgy viselkedik, mint, tudod...");
+					m("Egy meleg!");
 					Buddy_Choice();
 
 				});
