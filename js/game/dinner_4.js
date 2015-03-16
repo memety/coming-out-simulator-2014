@@ -294,7 +294,7 @@ function Father_Soon(message){
 			$.promise_silence = "tit for tat";
 			
 			n(message);
-			m(Nem fogom.");
+			m("Nem fogom.");
 			n("Ígérd meg!");
 			m("Ígé--");
 			m("Cssst! Itt van!.");
