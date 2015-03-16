@@ -83,14 +83,13 @@ function Cry_2(message){
 function Cry_3(message){
 
 	$.crying = "mocking";
-	Show("nicky","dinner_nicky_outrage");
 
-	n("ÁÁÁÁHh");
-	m("hüü... hüü... hüü...");
-	n("HÜÜÜ HÜÜÜÜ HÜÜ");
+	m("Ááááhhh");
+	m("Hüü... hüü... hüü...");
+	m("HÜÜÜ HÜÜÜÜ HÜÜ");
 	m("óó... óó...");
-	n("BRRrrRR-BRR-BRbR BWAH BWAHRR rrrRRR-WaahHH Vöövö RaaahhH");
-	m("szip...");
+	m("BRRrrRR-BRR-BRbR BWAH BWAHRR rrrRRR-WaahHH Vöövö RaaahhH");
+	m("szip-szip...");
 
 	Show("nicky","dinner_nicky_defiant");
 	n("Oké, befejezted?");
