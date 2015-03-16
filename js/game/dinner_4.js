@@ -87,7 +87,7 @@ function Cry_3(message){
 	m("Ááááhhh");
 	m("Hüü... hüü... hüü...");
 	m("HÜÜÜ HÜÜÜÜ HÜÜ");
-	m("óó... óó...");
+	m("óhó... óóh... óóó...");
 	m("BRRrrRR-BRR-BRbR BWAH BWAHRR rrrRRR-WaahHH Vöövö RaaahhH");
 	m("szip-szip...");
 
