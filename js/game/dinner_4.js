@@ -154,12 +154,12 @@ function Have_You_Had_Sex(){
 	m(". . .");
 	m("Lefeküdtél Jackel?");
 	Choose({
-		"Yes.": function(message){
+		"Aha.": function(message){
 			n(message);
 			m("[ZIHÁL]");
 			Have_You_Had_Sex_2();
 		},
-		"No.": function(message){
+		"Nem.": function(message){
 			n(message);
 			m("Kérlek ne hazudj... Olvastam az smseidet...");
 			n("Csak smseztünk, de AZT nem csináltuk.");
@@ -222,9 +222,9 @@ function Throw_Up(){
 	Wait(1000);
 
 	Choose({
-		"mi?.": Father_Soon,
-		"miiii?": Father_Soon,
-		"mi vaaaaaan?": Father_Soon
+		"Jesszus, anya! Kissé túlreagálod, nem?": Father_Soon,
+		"Jesszus, de undorító!": Father_Soon,
+		"Mi vaaaaaan?": Father_Soon
 	});
 
 }
