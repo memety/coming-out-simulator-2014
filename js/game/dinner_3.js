@@ -98,15 +98,15 @@ function Tutor_Seeing(message){
 function Tutor_Matchmake(message){
 	n(message);
 	m("Hát, ha ezt akarod, rendben!");
-	n("neeeeeeee.");
+	n("Jesszus, dehogy!.");
 	m("Ne légy szégyenlős! Hamarosan érett férfi leszel!.");
-	m("És sok unokával ajándékozol meg minket.");
+	m("És sok unokával ajándékozol majd meg minket.");
 
 	Choose({
 		"Állj már le! Még nem is találkoztam Claire-rel!": function(message){
 			n(message);
 			m("...még!");
-			m("Holnap átjön!");
+			m("De holnap átjön!");
 			n("Mi van? De megígértem Jacknek, hogy--");
 			m("Kivasaltam a legjobb ruháidat. Remek első benyomást fogsz kelteni.");
 			Threat_Tutor();
