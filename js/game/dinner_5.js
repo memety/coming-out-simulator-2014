@@ -10,38 +10,38 @@ function Start_Dinner_5(){
 
 	PlaySound("sfx","dinner_door");
 	
-	f("Hey Qiying! Hey Nick!");
+	f("Szia Qiying! Hey Szia!");
 	f("I'm home!");
 	
 	Show("dad","dad_serious");
 
-	m("Hi honey.");
-	n("Sup dad, how was your day?");
+	m("Szia drágám.");
+	n("Mi újság apa, milyen volt a napod?");
 
-	f("Stayed overtime. Hopefully the boss will notice it before my Performance Review.");
-	f("Really, though, I was just playing web games all day. Haha!");
-	n("Ha ha.");
+	f("Túlóráztam. Remélhetőleg a főnök észreveszi még a teljesítményértékelés előtt.");
+	f("De egyébként csak netes játékokat toltam. Höhö.");
+	n("Haha.");
 
-	f("Nick, why aren't <i>your</i> web games any fun?");
+	f("Nick, a <i>te</i> netes játékaid miért nem ilyen jók?");
 
 	Choose({
-		"I thought my games were fun...": function(message){
+		"Én azt hittem pedig, hogy jók...": function(message){
 			n(message);
-			f("Well then! You have a sick sense of fun, don't you. Haha!");
+			f("Hát, ezek szerint nincs valami jó ízlésed. Höhö!");
 			n(". . .");
 			Casual();
 		},
-		"Not all games have to be fun.": function(message){
+		"Mert az emberek ízlése különböző": function(message){
 			n(message);
-			f("Oh yes. You're right.");
-			f("BAD games aren't any fun. Haha!");
+			f("Na igen. Ez igaz.");
+			f("Ami rossz az rossz. Höhö!");
 			n(". . .");
 			Casual();
 		},
-		"ART!": function(message){
+		"MŰVÉSZET!": function(message){
 			n(message);
-			f("Pfft. What's the use of art?");
-			f("Next thing you know, you're going to be writing bad amateur poetry, or something.");
+			f("Pfff. Annak meg mi haszna?");
+			f("Legközelebb meg már amatőr költő leszel, vagy mi?.");
 			n(". . .");
 			Casual();
 		}
@@ -51,48 +51,48 @@ function Start_Dinner_5(){
 
 function Casual(){
 	
-	f("Hey Qi, what's that sauce on your plate?");
-	f("Uh...");
+	f("Hé Qi, mi az a szósz a tányérodon?");
+	f("Fúj...");
 
 	Show("clock_time","clock_1950");
 
 	Choose({
-		"It's vomit.": function(message){
+		"Az ott hányás.": function(message){
 			
 			n(message);
 
 			$.grounded = 2;
-			f("Nick! One week grounded!");
-			f("Don't insult your mother's cooking like that.");
-			f("Her food insults itself plenty enough. Haha!");
+			f("Nick! Egy hét szobafogság!");
+			f("Ne sértegesd anyád főztjét!");
+			f("Épp elég rossz neki az, hogy ilyen rosszul főz. Höhö!");
 
 			Casual_2();
 
 		},
-		"Don't eat it! It's, uh, really not good.": function(message){
+		"Ne egyél belőle, őő nem lett valami jó.": function(message){
 			
 			n(message);
 
 			$.grounded = 1;
-			f("Nick! One day grounded!");
-			f("Show some respect. Have more faith in your mother's cooking!");
-			f("Because the way she cooks, we could certainly use a miracle! Haha!");
+			f("Nick! Egy nap szobafogság!");
+			f("Mutass némi tiszteletet! És becsüld meg az ételt.");
+			f("Mert ahogy főz, más úgysem fogja soha! Höhö!");
 
 			Casual_2();
 
 		},
-		"Why don't you give it a try, dad?": function(message){
+		"Miért nem kóstolod meg, apa?": function(message){
 			
 			n(message);
 
 			$.grounded = 0;
 			m("Nick...");
-			f("Don't mind if I do!");
-			f("[eats a spoonful]");
+			f("Nem gond?");
+			f("[eszik egy kanállal]");
 			f(". . .");
 			n(". . .");
 			m(". . .");
-			f("Well, you've cooked up worse, hun. Haha!");
+			f("Hát, főztél már rosszabbat is. Höhö!");
 
 			Casual_2();
 
@@ -103,17 +103,17 @@ function Casual(){
 
 function Casual_2(){
 	
-	m("Dear...");
-	f("So, son! How's school?");
+	m("Drágám...");
+	f("Na fiam, mi újság a sulival?");
 
 	Choose({
-		"School's fine.": function(message){
+		"A sulival minden rendben van.": function(message){
 
 			n(message);
 
-			f("Really, fine?");
+			f("Igen? Minden?");
 			if($.studying_subject!=$.studying_subject_2){
-				f("What about your poor grades in "+$.studying_subject+" and "+$.studying_subject_2+"?");
+				f("Mia helyzet a gyenge "+$.studying_subject+" és "+$.studying_subject_2+" jegyeiddel"?");
 			}else{
 				f("What about your poor grades in "+$.studying_subject+"?");
 			}
