@@ -113,7 +113,7 @@ function Casual_2(){
 
 			f("Igen? Minden?");
 			if($.studying_subject!=$.studying_subject_2){
-				f("Mia helyzet a gyenge "+$.studying_subject+" és "+$.studying_subject_2+" jegyeiddel"?");
+				f("Mia helyzet a gyenge "+$.studying_subject+" és "+$.studying_subject_2+" jegyeiddel?");
 			}else{
 				f("What about your poor grades in "+$.studying_subject+"?");
 			}
