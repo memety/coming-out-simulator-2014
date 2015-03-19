@@ -10,8 +10,8 @@ function Start_Dinner_5(){
 
 	PlaySound("sfx","dinner_door");
 	
-	f("Szia Qiying! Hey Szia!");
-	f("I'm home!");
+	f("Szia Qiying! Szia Nick!");
+	f("Hazaértem!");
 	
 	Show("dad","dad_serious");
 
@@ -19,13 +19,13 @@ function Start_Dinner_5(){
 	n("Mi újság apa, milyen volt a napod?");
 
 	f("Túlóráztam. Remélhetőleg a főnök észreveszi még a teljesítményértékelés előtt.");
-	f("De egyébként csak netes játékokat toltam. Höhö.");
+	f("De végig csak netes játékokat toltam. Höhö.");
 	n("Haha.");
 
 	f("Nick, a <i>te</i> netes játékaid miért nem ilyen jók?");
 
 	Choose({
-		"Én azt hittem pedig, hogy jók...": function(message){
+		"Én azt hittem, hogy jók...": function(message){
 			n(message);
 			f("Hát, ezek szerint nincs valami jó ízlésed. Höhö!");
 			n(". . .");
@@ -38,10 +38,10 @@ function Start_Dinner_5(){
 			n(". . .");
 			Casual();
 		},
-		"MŰVÉSZET!": function(message){
+		"Apa, ez MŰVÉSZET!": function(message){
 			n(message);
 			f("Pfff. Annak meg mi haszna?");
-			f("Legközelebb meg már amatőr költő leszel, vagy mi?.");
+			f("Legközelebb meg már amatőr költő leszel, vagy mi?");
 			n(". . .");
 			Casual();
 		}
@@ -64,19 +64,19 @@ function Casual(){
 			$.grounded = 2;
 			f("Nick! Egy hét szobafogság!");
 			f("Ne sértegesd anyád főztjét!");
-			f("Épp elég rossz neki az, hogy ilyen rosszul főz. Höhö!");
+			f("Így is épp elég nehéz elviselnünk, hogy ilyen rosszul főz. Höhö!");
 
 			Casual_2();
 
 		},
-		"Ne egyél belőle, őő nem lett valami jó.": function(message){
+		"Ne egyél belőle, öhm... nem lett valami túl jó.": function(message){
 			
 			n(message);
 
 			$.grounded = 1;
 			f("Nick! Egy nap szobafogság!");
-			f("Mutass némi tiszteletet! És becsüld meg az ételt.");
-			f("Mert ahogy főz, más úgysem fogja soha! Höhö!");
+			f("Mutass némi tiszteletet! És persze becsüld meg az ételt.");
+			f("Mert ahogy anyád főz, olyan rosszul más úgysem fog soha! Höhö!");
 
 			Casual_2();
 
@@ -113,16 +113,16 @@ function Casual_2(){
 
 			f("Igen? Minden?");
 			if($.studying_subject!=$.studying_subject_2){
-				f("Mia helyzet a gyenge "+$.studying_subject+" és "+$.studying_subject_2+" jegyeiddel?");
+				f("Milyen jegyeket hoztál mostanában "+$.studying_subject"ból és "+$.studying_subject_2+"ból?");
 			}else{
-				f("What about your poor grades in "+$.studying_subject+"?");
+				f("Milyen jegyeket hoztál mostanában "+$.studying_subject"ból?");
 			}
 
-			m("Nick and I were just talking about that.");
+			m("Nick és én pont erről beszélgettünk, amikor hazajöttél.");
 			Getting_A_Tutor();
 
 		},
-		"I'm studying at a friend's place tomorrow.": function(message){
+		"Hát például holnap pont egy barátomnál fogok tanulni.": function(message){
 			n(message);
 
 			$.tried_talking_about_it = true;
@@ -130,42 +130,42 @@ function Casual_2(){
 			if($.grounded>0){
 
 				if($.grounded==1){
-					f("Don't you remember? I just grounded you for tomorrow.");
+					f("Emlékeztetnélek, hogy pont az előbb kaptál egy nap szobafogságot.");
 				}
 				if($.grounded==2){
-					f("Don't you remember? I just grounded you for a week.");
+					f("Emlékeztetnélek, hogy pont az előbb kaptál egy hét szobafogságot.");
 				}
-				f("You must get your stupid from your mother's side. Haha!");
+				f("Szóval itthon leszel és ostoba maradsz anyád mellett! Höhöhö.");
 				
-				n("Um. I...");
+				n("Öhm... Én...");
 
 				$.grounded++;
 				if($.grounded==2){
-					f("I'm bumping it up. You're now grounded for a week.");
+					f("Meggondoltam magam. Mostantól egy hétig leszel szobafogságban.");
 				}
 				if($.grounded==3){
-					f("I'm bumping it up. You're now grounded for TWO weeks.");
+					f("Meggondoltam magam. Mostantól KÉT hétig leszel szobafogságban.");
 				}
 
 			}
 
-			m("Speaking of studying...");
+			m("Visszatérve a tanulásra...");
 			Getting_A_Tutor();
 
 		},
-		"DAD I'M BISEXUAL AND BANGING JACK.": function(message){
+		"APA, BISZEXUÁLIS VAGYOKÉS JACKKEL KEFÉLEK!!!": function(message){
 			$.tried_talking_about_it = true;
 
 			Show("nicky","dinner_nicky_outrage");
-			n("DAD I'M BI--");
+			n("APA ÉN BI--");
 			Show("nicky","dinner_nicky_sit");
 
-			m("BICYCLING to school every day starting next week.");
-			f("Oh good!");
-			f("You could certainly lose some weight, or else how will you get a girlfriend?");
-			f("You must get your chubbiness from your mother. Haha!");
-			n("Ha ha.");
-			m("Speaking of school...");
+			m("BICIKLIVEL fog járni minden nap az iskolába jövő héttől.");
+			f("Ó, remek!");
+			f("Szedned kell magadra némi izmot, különben hogy fogsz barátnőt szerezni?");
+			f("Ezt a tunyaságot az anyádtól örökölted. Haha!");
+			n("Ha-ha.");
+			m("VISSZATÉRVE az iskolára...");
 			Getting_A_Tutor();
 		}
 
@@ -175,49 +175,49 @@ function Casual_2(){
 
 function Getting_A_Tutor(){
 
-	m("We were discussing probably getting a home tutor.");
-	f("Oh! Is this the Claire kid?");
+	m("Arról beszélgettünk, hogy Nicknek esetleg szerezhetnénk valakit, aki korrepetálja.");
+	f("A valaki alatt azt a dögös kis Claire-t érted, ugye?");
 
 	// Oh dang!
 	Show("nicky","dinner_nicky_defiant");
 
 	switch($.promise_silence){
 		case "yes":
-			n("Mom, we both promised we wouldn't talk about this...");
+			n("Anya, tudod, <i>megegyeztünk abban</>, hogy nem beszélünk többet erről, mert...");
 			if($.tried_talking_about_it){
-				m("You <i>just</i> tried talking about it.");
+				m("Igaz, tényleg nem hozom szóba többet és <i>neked sem kell</i>...");
 			}
 			break;
 		case "no":
-			n("Mom, you said we wouldn't talk about this...");
-			m("You're the one who didn't promise not to talk!");
+			n("Anya, megígérted, hogy nem beszélsz erről többet...");
+			m("Kettőnk közül pont, hogy te vagy az, aki nem tartja be, amit mond!");
 			break;
 		case "tit for tat":
-			n("Mom, you said you wouldn't talk about this if I didn't...");
+			n("Anya, azt mondtad, nem hozod ezt szóba többet, ha én sem hozom szóba, hogy--");
 			if($.tried_talking_about_it){
-				m("You <i>just</i> tried talking about it.");
+				m("Hogy nem is akarsz igazából semmit se szóba hozni.");
 			}
 			break;
 	}
 
-	f("Talking about what?...");
-	f("I'm the head of this household. You two better not be hiding secrets from me.");
-	m("Oh... Nick just really, really likes Claire.");
+	f("Mit nem akartok szóba hozni??...");
+	f("Ebben a családban én vagyok főnök, ti ketten pedig titkoltok valamit előlem!c.");
+	m("Ó.. hát tulajdonképpen csak arról van szó, hogy Nick nagyon-nagyon kedveli Claire-t.");
 
 	Choose({
-		"What?! No I don't!": function(message){
+		"Mi van?! Nem, dehogy!": function(message){
 			n(message);
-			f("Don't be so shy about it.");
+			f("Jaj ne legyél ilyen kis szégyellős.");
 			Getting_A_Tutor_2();
 		},
-		"Fine. You got me. I have a crush on Claire.": function(message){
+		"Végre. Most már végre neked is kezd derengeni a dolog! Claire egyébként nekem is nagyon bejön!": function(message){
 			n(message);
 			Getting_A_Tutor_2();
 		},
-		"I have a boyfriend.": function(message){
+		"Már van pasim.": function(message){
 			n(message);
-			f("Yes son! You're going to be a boyfriend!");
-			n("<i>Have</i>. I <i>have</i> a--");
+			f("Így van fiam! Te leszel a pasija!");
+			n("<i>Nekem van</i>. <i>Nekem van</i> pa--");
 			Getting_A_Tutor_2();
 		}
 	});
