@@ -226,11 +226,11 @@ function Getting_A_Tutor(){
 
 function Getting_A_Tutor_2(){
 	
-	f("You're becoming a man, son!");
-	f("If I were your age, I ditch your mother and chase Claire, too! Haha!");
+	f("Nemsokára férfi leszel, fiam!");
+	f("Ha annyi idős lennék mint te, dobnám anyádat és ráhajtanék Claire-re, ahogy te is! Haha!");
 
-	n("That's totes weird, dude.");
-	f("Talking back? Careful, I'll box your ears, boy!");
+	n("Ez nagyon bizarr, apa.");
+	f("Visszadumálsz? Lekeverek egyet, fiam!");
 
 	if($.changing_schools){
 		m("We were also thinking about changing schools for Nick.");
