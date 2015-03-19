@@ -63,49 +63,49 @@ function Closure(){
 	Show("cup",null);
 
 	p("Ugh.");
-	p("I feel gross just using the same-coloured dialogue balloons as the Father character.");
+	p("Vacakul érzem magam, amiért ugyanolyanok a párbeszéd buborékjaim, mint az apádnak.");
 
 	Show("nicky","coffee_nicky_still");
 	Show("cup","cup_steam");
 
-	N("Which reminds me. Many of the characters have been swapped around.");
-	N("Minden nevet megváltoztattam természetesen, kivéve az enyémet.");
+	N("Érdekes, hogy emlékszel rá. Csak az övé különbözik a többi karaktertől.");
+	N("Egyébként minden nevet megváltoztattam természetesen, kivéve az enyémet.");
 	N("Ezt a kicsöcsém érdekében tettem, mert ő még olyan ártatlan.");
-	N("És visszatettem a történetbe az apámat, aki egyébként még 2010 előtt elhagyta a családunkat.");
+	N("És zépámat csak visszatettem a történetbe, mert egyébként még 2010 előtt elhagyta a családunkat.");
 
 	if($.main_menu_convo_2==3){
 		N("Látod mondtam, ez egy igaz történeten alapuló játék tele hazugságokkal.");
 	}
 	
-	p("You could have at least given me a different colour.");
-	N("It's been four years since that night...");
-	N("What do you think happened afterwards?");
+	p("Akkor is adhattál volna nekem egy másik színt.");
+	N("Akkor, amikor csináltam, nem igazán volt prioritása a dolognak.");
+	N("Mit gondolsz ezek után, hogy zárult végül a sztori?");
 
 	if($.main_menu_convo_2==2){
-		N("Don't worry. Like we said in the Main Menu, there are no right answers.");
+		N("Ne aggódj, ahogy az elején is mondtam, itt nincsenek jó vagy rossz válaszok.");
 	}
 
 	$.coming_out_stories_left = 3;
 	$.order_of_stories = [];
 
 	Choose({
-		"Dude, I dunno, just freaking tell me.": function(message){
+		"Haver, tényleg nem tudom, nyögd már ki!.": function(message){
 			p(message);
-			N("Alright, I will tell you what happened.");
-			N("...and what happened, and what happened.");
-			p("What.");
+			N("Oké-oké, már is elmondom, mi történt végül.");
+			N("...és mi történt azután, meg azután.");
+			p("MONDD MÁR!");
 			Closure_Story();
 		},
-		"Let me guess, It Gets Better&trade;?": function(message){
+		"Nyugtass meg, azért végül jobbara fordultak a dolgok, ugye?": function(message){
 			p(message);
-			N("Yes, actually! In all three versions of what happened.");
-			p("What.");
+			N("Persze! Mindhárom verzióban ez történt.");
+			p("DE MI?.");
 			Closure_Story();
 		},
-		"Flowers and rainbows and gay unicorns?": function(message){
+		"Virágok, szivárványok és meleg unikornisok?": function(message){
 			p(message);
-			N("Yes, actually! At least, in one of my three versions of what happened.");
-			p("Of course.");
+			N("Naná! Legalább egy verziónak így kellett végződnie.");
+			p("Naná, haver.");
 			Closure_Story();
 		}
 	});
@@ -115,12 +115,12 @@ function Closure(){
 function Closure_Story(){
 
 	if($.coming_out_stories_left==3){
-		N("Which post-coming-out story do you want to hear first?");
-		N("Don't worry, you'll get to hear all three of them.");
+		N("Melyik epilógot akarod először hallani?");
+		N("Nyugi, elmondom amúgy mind a hármat.");
 	}else if($.coming_out_stories_left==2){
-		N("Now, which version do you want to hear next?");
+		N("Oké, melyik legyen a következő?");
 	}else if($.coming_out_stories_left==1){
-		N("Finally, let's hear the last story...");
+		N("Végül, íme az utolsó verzió...");
 	}else{
 		Finale_1();
 		return;
@@ -129,9 +129,9 @@ function Closure_Story(){
 	$.coming_out_stories_left -= 1;
 
 	var options = [];
-	if(!$.told_story_lie) options["The Lie."]=Tell_Me_A_Lie;
-	if(!$.told_story_truth) options["The Truth."]=Tell_Me_A_Truth;
-	if(!$.told_story_half_truth) options["The Half-Truth."]=Tell_Me_A_Half_Truth; 
+	if(!$.told_story_lie) options["A hazugság."]=Tell_Me_A_Lie;
+	if(!$.told_story_truth) options["Az igazság."]=Tell_Me_A_Truth;
+	if(!$.told_story_half_truth) options["A féligazság."]=Tell_Me_A_Half_Truth; 
 	Choose(options);
 
 }
@@ -139,10 +139,10 @@ function Closure_Story(){
 function Is_Last_Story(){
 	if($.coming_out_stories_left==0){
 		if($.asked_about && $.asked_credits){
-			p("Again, with the making the only option a clickable option...");
+			p("Megint jössza válaszlehetőségekkel, holott így is, úgyis ugyanoda lyukadunk ki...");
 		}else{
-			p("Why did you make that a clickable option, when it was the only option left.");
-			N("No idea. Moving on.");
+			p("Miért csináltál több különböző válaszlehetőséget, ha mindegy hová klikkelek, mert csak egyféle vége van a sztorinak?.");
+			N("Nem tudom. Haladjunk.");
 		}
 	}
 }
@@ -164,16 +164,16 @@ function Tell_Me_A_Lie(message){
 	N("Very well.");
 	Is_Last_Story();
 
-	N("I ran away from home, with nothing more than a luggage bag full of edible underwear.");
+	N("Elmenekültem otthonról és nem volt nálam más, csak egy sporttáska, tele ehető alsónadrágokkal.");
 	if($.im_a_poet){
-		N("I roamed the Great White North. Supporting myself by writing amateur poetry for strangers.");
+		N("Elutaztam a nagy fehér Északra. Amatőr verseket írtam idegeneknek, ebből tartottam fenn magam.");
 	}else{
-		N("I roamed the Great White North. Supporting myself by making not-fun web games.");
+		N("Elutaztam a nagy fehér Északra. Nem-vicces web-játékokat csináltam, ebből tartottam fenn magam.");
 	}
-	N("I ate flowers. Followed the rainbows. And befriended a homosexual unicorn.");
+	N("Virágokat ettem. Követtem a szivárványt. És persze összebarátkoztam egy meleg unikornissal.");
 	p(". . .");
-	N("Eventually I made it to Alaska, where I met an adult bisexual couple named Bonnie & Clyde.");
-	N("Bonnie was a mid-30s cougar, and Clyde was an early-40s manther.");
+	N("Végül Alaszkában kötöttem ki, ahol összebarátkoztam egy biszexuális párral, Bonnie-val és Clyde-dal.");
+	N("Bonnie egy harmincas évei közepén járó cougar volt, Clyde pedig egy alig negyvenes manther.");
 
 	// FAMILY WITH BENEFITS
 	// Weave in -- top or bottom
