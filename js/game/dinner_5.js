@@ -233,37 +233,37 @@ function Getting_A_Tutor_2(){
 	f("Visszadumálsz? Lekeverek egyet, fiam!");
 
 	if($.changing_schools){
-		m("We were also thinking about changing schools for Nick.");
-		m("Maybe to Claire's school.");
+		m("Arra gondoltunk, hogy Nicknek iskolát kellene váltani.");
+		m("Mondjuk átiratkozhatna Claire iskolájába.");
 	}
 	if($.studying_subject!=$.studying_subject_2){
-		m("Claire will be tutoring Nick every day after school in "+$.studying_subject+" and "+$.studying_subject_2+".");
+		m("És korrepetálhatná őt iskola után minden nap "+$.studying_subject+"ból and "+$.studying_subject_2+"ból.");
 	}else{
-		m("Claire will be tutoring Nick every day after school in "+$.studying_subject+".");
+		m("És korrepetálhatná őt iskola után minden nap "+$.studying_subject+"ból.");
 	}
 
-	f("Nick, how does all this sound? Yes or no?");
-	m("He loves the ide--");
-	f("Shut up, Qi. I asked my son.");
+	f("Nick, te mit szólsz mindehhez?");
+	m("Ó, Nick igazán egyeté-");
+	f("Fogd be, Qui. A fiamat kérdeztem.");
 	m(". . .");
 
 	Show("dad","dad_threat");
 
 	f("Mister Nicklaus Liow.");
 	if($.changing_schools){
-		f("You want to change schools to chase your hot tutor girlfriend?");
+		f("Akarsz iskolát váltani, hogy aztán összejöjj a dögös korrepetálólánnyal?");
 	}else{
-		f("You want to spend all your after-school hours with your hot tutor girlfriend?");
+		f("Akarsz minden iskola utáni órát a dögös korrepetálólánnyal tölteni?");
 	}
 
-	n("It's complicated, I--");
-	f("No pansy middle-of-the-road answers.");
-	f("Yes. Or. No.");
+	n("Ez bonyolult, én, szóval--");
+	f("Nincs átmenet, vagy kompromisszumos megoldás.");
+	f("Igen. Vagy. Nem.");
 
 	n(". . .");
 
 	Choose({
-		"Yes.": Agree_With_Dad,
+		"Igen.": Agree_With_Dad,
 		"No.": Argue_With_Dad
 	});
 
@@ -271,57 +271,57 @@ function Getting_A_Tutor_2(){
 
 function Agree_With_Dad(){
 	
-	n("...Yes.");
+	n("...Igen.");
 
-	f("Hm.");
-	f("You two seem to have made this big life decision very eagerly!");
-	f("So eagerly, in fact, you made it in less than an hour, and tried to hide it from me. What a sudden change.");
+	f("Hmm.");
+	f("Ti ketten nagyon igyekeztekn eltitkolni valamit előlem!");
+	f("Nagyon-nagyon igyekeztek, pedig ez a dolog szerintem kevesebb, mint egy órája történt és ti mégis próbáljátok előlem elrejteni.");
 	m(". . .");
 	n(". . .");
 
-	f("Nick, you did something naughty, didn't you?");
-	f("What did you do.");
+	f("Nick, valami nagy baromságot csináltál, ugye?");
+	f("Mit csináltál?");
 
 	Choose({
-		"I failed my midterms.": function(message){
+		"Elszúrtam a félévi jegyeimet.": function(message){
 			
 			n(message);
 
-			f("...Oh.");
-			f("Yeah, you need to get your grades back up.");
+			f("...Óó.");
+			f("Hát igen, miuszáj lesz feltornásznod a jegyeidet.");
 
 			Show("dad","dad_serious");
 
-			f("Or you'll be stuck in a teaching job like your mother! Haha!");
+			f("Vagy különben te megrekedsz egy tanári állásnál, mint az anyád! Haha!");
 			n(". . .");
 			Agreeable_Ending();
 
 		},
-		"I had sex with Jack.": function(message){
+		"Lefeküdtem Jackkel.": function(message){
 			
 			n(message);
 			
 			Show("mom","mom_cry");
-			m("[sob]");
+			m("[szipog]");
 			f(". . .");
 			Argument_Ending();
 
 		},
-		"I had sex with Claire.": function(message){
+		"Lefeküdtem Claire-rel.": function(message){
 			
 			n(message);
 			
 			m("...Nick!");
 			f(". . .");
-			f("   Nnnnnniiiiiiiiice.");
-			m("...Dear!");
-			f("Wait, uh, you didn't get her pregnant, did you?");
-			n("No. I'm not stupid.");
+			f("   Széééééééép!");
+			m("...de drágám!");
+			f("Várj csak, ugye nem azért volt ez annyira titkos, mert öhm.. teherbe ejtetted?");
+			n("Dehogy. Nem vagyok hülye.");
 			
 			Show("dad","dad_serious");
 
-			f("Good. Otherwise you'd be stuck for the next two decades raising a kid, like me! Haha!");
-			n("Ha ha.");
+			f("Remek. Különben te is két évtizedre gyereknevelésre lennél kárhoztatva, ahogy én! Haha!");
+			n("Ha-ha.");
 			Agreeable_Ending();
 
 		}
@@ -333,44 +333,44 @@ function Agreeable_Ending(){
 
 	$.father_oblivious = true;
 
-	f("For a moment there, Nick, I thought you'd been smoking pot with your hippie classmate Jack, or something!");
+	f("Egy pillanattal ezelőtt még azt hittem, azt fogod mondani, hogy füveztél azzal a hippi Jack-gyerekkel, vagy valami hasonló szörnyűséget!");
 
 	Show("nicky","dinner_nicky_sit");
 	n(". . .");
-	f("So!");
-	f("Who wants to watch a movie this weekend? I hear Inception is good.");
+	f("Szóóóval...");
+	f("Ki akar moziba menni a hétvégén? Úgy hallottam, az Eredet remek film.");
 
 	Choose({	
-		"Let's watch it! I haven't seen it yet.": function(message){
+		"Persze, nézzük meg! Még úgysem láttam.": function(message){
 			n(message);
-			f("Then it's a plan!");
-			f("Hey Nick, you know who's acting in the movie?");
-			n("Um. Leonardo DiCaprio?");
-			f("No no, Ellen Page.");
-			f("Doesn't Claire look a little bit like her?");
-			n("I guess.");
+			f("Akkor meg is van a terv szombatra.");
+			f("Hé Nick, hogy is hívják azt a híres színészt, aki ebben a filmben játszik?");
+			n("Öhm, Leonardo Dicaprio?");
+			f("Neem, nem, egy nő. Tudom is! Ellen Page.");
+			f("Szerinted is hasonlít rá kicsit Claire?");
+			n("Jaa, szerintem is.");
 			Dinner_Ending();
 		},
-		"Uh... let's do a different movie...": function(message){
+		"Öhm... Inkább nézzünk meg valami mást.": function(message){
 			n(message);
-			f("What, Inception too complicated for you?");
-			n("Hey...");
+			f("Na mi az, talán túl összetett neked az Eredet?");
+			n("Héé...");
 			if($.studying_subject!=$.studying_subject_2){
-				f("Sure, I understand if you failed "+$.studying_subject+" and "+$.studying_subject_2+"...");
+				f("Komolyan, most már értem, miért olyan rosszak a jegyeid "+$.studying_subject+"ból és "+$.studying_subject_2+"ból.");
 			}else{
-				f("Sure, I understand if you failed "+$.studying_subject+"...");
+				f("Komolyan, most már értem, miért olyan rosszak a jegyeid "+$.studying_subject+"ból.");
 			}
-			f("But come on, this is a <i>movie</i>!");
-			f("You can't have inherited that much stupid from your mother's side! Haha!");
-			n("Ha ha.");
+			f("Viszont ez csak egy <i>film</i>!");
+			f("Ugyan, ennyi sötétséget csak nem örököltél az anyádtól! Haha!");
+			n("Ha-ha.");
 			Dinner_Ending();
 		},
-		"Oh, I already saw Inception.": function(message){
+		"Hát.. Igazából én már láttam az Eredetet.": function(message){
 			n(message);
-			f("Oh ho, I see...");
-			f("You went on a little movie date with your special friend Claire, didn't you?");
-			n("Yeah.");
-			n("A date with my special friend.");
+			f("Óóó, értem már...");
+			f("Egy laza kis mozis randin voltál Claire-rel, a <i>különleges</i> barátoddal, mi?");
+			n("Jaa.");
+			n("Egy randin a különleges <i>barátommal</i>.");
 			Dinner_Ending();
 		}
 	});
@@ -379,51 +379,51 @@ function Agreeable_Ending(){
 
 function Argue_With_Dad(){
 
-	n("...No.");
+	n("...Nem.");
 
-	f("Excuse me?");
-	n("No. Mom's doing this so I can't see Jack anymore.");
-	f("Jack.");
-	n("My friend.");
+	f("Parancsolsz?");
+	n("Nem. Anya azt mondta, hogy nem találkozhatok többé Jackkel.");
+	f("Öhm.. Jack?");
+	n("A barátom.");
 
 	Choose({
-		"My boyfriend.": function(message){
+		"A párom.": function(message){
 			
 			n(message);
 
 			Show("mom","mom_cry");
-			m("[sob]");
+			m("[szipog]");
 
-			m("Jack did this to our son!");
-			f("That kid chose his lifestyle, but I will not have it be yours, Nick.");
+			m("Jack tette ezt a fiúnkkal!");
+			f("Az a gyerek ezt az életmódot választotta, de te nem fogod, Nick!");
 			Argument_Ending();
 		},
-		"Mom hates him, coz he happens to be gay.": function(message){
+		"Anya utálja őt, mert kiderült róla, hogy meleg.": function(message){
 
 			n(message);
 
 			Show("mom","mom_cry");
-			m("[sob]");
+			m("[szipog]");
 
-			f("You made your mother cry.");
+			f("Megríkattad anyádat.");
 			if($.hippies){
-				m("And his parents are drug addicts!");
+				m("Ráadásul a szülei is közönséges drogosok!");
 			}
-			f("Jack chose that lifestyle, but I will not have it be yours, Nick.");
+			f("Az a gyerek ezt az életmódot választotta, de te nem fogod, Nick!");
 			Argument_Ending();
 		},
-		"Mom hates him, coz she THINKS he's gay.": function(message){
+		"Anya utálja őt, mert azt HISZI, hogy meleg.": function(message){
 
 			n(message);
 
 			Show("mom","mom_cry");
-			m("[sob]");
+			m("[szipog]");
 
-			m("Jack IS gay!");
+			m("Nem, hiszem, TUDOM!");
 			if($.hippies){
-				m("And his parents are drug addicts!");
+				m("Ráadásul a szülei is közönséges drogosok!");
 			}
-			f("Jack chose that lifestyle, but I will not have it be yours, Nick.");
+			f("Az a gyerek ezt az életmódot választotta, de te nem fogod, Nick!");
 			Argument_Ending();
 		}
 	});
@@ -437,96 +437,96 @@ function Argument_Ending(){
 	n(". . .");
 
 	if($.top_or_bottom=="top"){
-		m("Jack acts like the woman, not him...");
+		m("De kettejük kapcsolatában Jack a nő...");
 	}
 	switch($.what_are_you){
 		case "bisexual":
-			m("Nick's not fully gay, he told me himself he's still attracted to girls!");
+			m("Nick nem teljesen meleg, nekem mondta, hogy vonzódik a lányokhoz is!");
 			n(". . .");
 			break;
 		case "confused":
-			m("Earlier Nick told me he was just confused!");
-			f("Oh, clearly he is.");
+			m("Korábban Nick még azt is mondta, hogy nagyon össze van zavarodva!");
+			f("Persze, nyilvánvalóan.");
 			n(". . .");
 			break;
 		case "son":
-			n("Look, like I told Mom just now, I'm your SON, isn't that enou--");
+			n("Nézd, mondtam anyának is, a fiatok vagyok, ez nem elé--");
 			break;
 	}
 	
-	f("Nick, you're changing schools.");
+	f("Nick, iskolát fogsz váltani.");
 	n(". . .");
-	m("huuu... huuu... huuu...");
+	m("bruhuuu... bruhuuuhu... bruhuhuuu...");
 
-	f("Your mother and I will do random checks on your texts and emails.");
+	f("Anyéd és én random ellenőrizgettük az üzeneteidet az utóbbi időben.");
 	n(". . .");
-	m("owww... owww...");
+	m("brüüh... brühühühüh... [szipog] brühühhh...");
 
-	f("I swear, if I have to pay Claire extra to make you realize you're straight, I will.");
+	f("Azt hiszem, képes lennék akár extra díjat is fizetni Claire-nek, ha rá tudna ébreszteni, hogy igazából heteró vagy.");
 	n(". . .");
 
 	Show("mom","mom_sit");
 	if($.crying=="anger"){
-		m("When I was crying earlier, he accused it of being fake!");
-		f("Qi, shut up. We're not talking about you.");
+		m("Még nem voltál itthon, amikor először sírtam el magam és Nick műsírással vádolt!");
+		f("Qui, fogd be. Most nem rólad beszélünk.");
 	}
 	if($.crying=="mocking"){
-		m("When I was crying earlier, he was mocking it!");
-		f("Qi, shut up. We're not talking about you.");
+		m("Még nem voltál itthon, amikor először sírtam el magam és Nick szörnyen érzéketlen volt!");
+		f("Qui, fogd be. Most nem rólad beszélünk.");
 	}
 
-	f("So Nick.");
-	f("Would you like to say anything, anything at all, about all that?");
+	f("SZÓVAL, Nick...");
+	f("Kívánsz hozzáfűzni bármit az elhangzottakhoz?");
 
 	Choose({
-		"Yes. Fuck this, and fuck you.": function(message){
+		"Igen. Leszarom, hogy mit gondoltok. És basszátok meg.": function(message){
 
-			n("Yes.");
-			n("FUCK this.");
-			n("And FUCK you.");
+			n("Igen.");
+			n("Leszarom, hogy mit gondoltok.");
+			n("És BASSZÁTOK MEG!");
 			
 			Show("nicky","dinner_nicky_outrage");
-			n("Fuck BOTH of you, you narcissistic slimy pieces of SHI--");
+			n("Basszátok meg mindketten, ti nárcisztikus, érzéketlen, homofób faszfe--");
 			
 			Dinner_Ending_Punch();
 
 		},
-		"No. I accept my punishment.": function(message){
+		"Nem. Elfogadom a büntetést.": function(message){
 
 			n(message);
-			f("Good. At least you're taking this like a man.");
+			f("Helyes. Úgy állszhozzá, ahogy egy igazi férfinek kell.");
 			n(". . .");
 
 			Show("dad","dad_serious");
 
-			m("sniff...");
-			f("I'm going out to the bar, and getting something actually edible to eat.");
+			m("[halkan szipog]");
+			f("Elmegyek egy bárba és rendelek valami emberi fogyasztásra alkalmasat, mivel ez a vacsora nem volt az.");
 
 			Show("dad",null);
 
-			f("Honey sweetie dear? Your cooking is shit.");
+			f("Édes kis drágám? A főztöd egy nagy határ fos.");
 			PlaySound("sfx","dinner_door");
 
 			m(". . .");
 			
 			Show("mom","mom_cry");
 
-			m("BAWWWWW");
+			m("BRÜÜÜÜHÜHÜÜÜÜHÜÜÜÜÜÜÜÜÜÜÜÜÜÜ");
 			
 			Dinner_Ending();
 
 		},
-		"You can't hurt me.": function(message){
+		"Nem tudsz nekem fájdalmat okozni.": function(message){
 
 			n(message);
 			f(". . .");
-			m("Dear, no...");
-			f("Mighty strong words, son.");
-			m("Honey, please don't!");
-			f("At least you're standing up to me. Like a man.");
-			m("Please! It's my fault! Don't--");
-			f("Ice keeps the swelling down.");
-			m("DEAR!");
+			m("Drágám, ne...");
+			f("Kissé erős szavak ezek, fiam!");
+			m("Édesem, kérlek ne tedd!");
+			f("Legalább állj elém, mint egy férfi.");
+			m("Kérlek!!! Ez az én hibám! NE CSINÁ--");
+			f("Majd a jég leviszi a daganatot.");
+			m("KÉRLEK!!!");
 			
 			Dinner_Ending_Punch();
 
