@@ -59,8 +59,8 @@ function Play(message){
 		N("Rendben.");
 	}
 
-	N("Utazzunk vissza az időben négy évet, egészen 2010-ig...");
-	p("Ez NÉGY éve volt?!");
+	N("Utazzunk vissza az időben öt évet, egészen 2010-ig...");
+	p("Ez ÖT éve volt?!");
 	N("...addig az estéig, ami örökre megváltoztatta az életemet.");
 
 	N("Mondd csak, kedves játékos, hogy képzeled ennek az egésznek a végkifejletét?");
