@@ -374,7 +374,7 @@ function Grades_Start_2(){
 		n("Végig tanulunk.");
 	}
 	m(". . .");
-	m("Ennek ellenére a jegyeid ugyanolyan borzalmasak, már ami a "+$.studying_subject_2+" illeti.");
+	m("Ennek ellenére a jegyeid ugyanolyan borzalmasak, már ami a "+$.studying_subject_2+"t illeti.");
 	n(". . .");
 	Grades_Explaining();
 }
