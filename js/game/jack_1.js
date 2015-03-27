@@ -18,18 +18,19 @@ function Start_Jack_1(){
 
 	/////////////////////////////
 
-	j("And when he simply announces,");
-	j("'I bought the airline.'");
-	j("That was positively priceless!");
-	n("Is that what he said?");
-	n("I missed out what everyone in the theater was laughing about.");
-	j("You either need subtitles, or to clean your ears more often.");
-	j("So how did you interpret the ending?");
+	j("És amikor csak így egyszerűen kijelentette, hogy");
+	j("'Vettem egy légitársaságot';");
+	j("...az valami zseniális volt!");
+	n("Jaa, szóval ezt mondta!");
+	n("Én lemaradtam róla, de a nézőtéren mindenki ezen röhögött.");
+	j("Akkor vagy nézd ezentúl felirattal a filmeket, vagy pedig moss fület gyakrabban.");
+	j("Tényleg, te hogyan értelmezted a pörgettyűs jelenetet a végén?");
+	j("Szerinted azt is csak álmodta, vagy pedig már ébren volt?")
 
 	Choose({
-		"It was totally all a dream.": Inception_Dream,
-		"He's got to be back in the real world!": Inception_Awake,
-		"Doesn't matter. Cobbs just finally let go.": Inception_Neither
+		"Csak álmodta.": Inception_Dream,
+		"Szerintem az már a valóságban történt.": Inception_Awake,
+		"Nem számít. A lényeg, hogy újra együtt voltak.": Inception_Neither
 	});
 
 }
@@ -39,30 +40,29 @@ function Inception_Dream(message){
 	$.inception_answer = "dream";
 
 	n(message);
-	j("So his entire redemption story was a lie?");
-	n("A big fat lie.");
-	j("You're a bit of a downer, aren't you?");
+	j("Szóval szerinted Saito ajánlata a körözés megszűntetéséről csak hazugság volt?");
+	n("Egy nagy, kövér hazugság.");
+	j("Kicsit depressziós vagy, nem?");
 
 	Choose({
-		"Yup, I'm just a sad sack of sadness.": Sadsack,
-		"Sometimes... but not when I'm with you.": function(message){
+		"Aha, a szívem szinte szétszakad a szüntelen szenvedéstől.": Sadsack,: function(message){
 			$.im_a_poet = true;
 
 			n(message);
-			j("Ah Nicky, you amateur poet.");
-			n("Get me some french breads and wine,");
-			n("Coz that's got to be the cheesiest thing I've ever said.");
-			j("Apologize for nothing.");
-			n("Anywho...");
+			n("Általában... kivéve, amikor veled vagyok.")
+			j("Jaj Nicky, te kis amatőr költő.");
+			n("Hozz francia bagettet és bort, hogy igazán sznob lehessek,");
+			n("...mert ez lesz a legfennköltebb dolog, amit valaha mondtam.");
+			n("Egyébként...");
 			Thanks();
 		},
-		"I'm just a realist.": function(message){
+		"Csak szimplán realista vagyok.": function(message){
 			$.hippies = true;
 
 			n(message);
-			j("You need more positive thinking in your life.");
-			n("And YOU need to stop being such a new-age hippie.");
-			n("Anywho...");
+			j("Próbáld meg pozitívabban látni a világot.");
+			n("Te pedig próbálj meg kevésbé hippi lenni.");
+			n("Egyébként...");
 			Thanks();
 		}
 	});
