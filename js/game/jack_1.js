@@ -44,15 +44,14 @@ function Inception_Dream(message){
 	j("Kicsit depressziós vagy, nem?");
 
 	Choose({
-		"Yup, I'm just a sad sack of sadness.": Sadsack,
-		"Sometimes... but not when I'm with you.": function(message){
+		"A szívem szinte szétszakad a szüntelen szenvedéstől.": Sadsack,
+		"Általában... kivéve, amikor veled vagyok.": function(message){
 			$.im_a_poet = true;
 			
 			n(message);
-			j("Ah Nicky, you amateur poet.");
-			n("Get me some french breads and wine,");
-			n("Coz that's got to be the cheesiest thing I've ever said.");
-			j("Apologize for nothing.");
+			j("Jaj Nicky, te kis amatőr költő.");
+			n("Hozz francia bagettet és bort, hogy igazán sznob lehessek,");
+			n("...mert ez lesz a legfennköltebb dolog, amit valaha mondtam.");
 			n("Anywho...");
 			Thanks();
 		},
