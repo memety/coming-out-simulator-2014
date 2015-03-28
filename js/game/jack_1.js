@@ -24,8 +24,7 @@ function Start_Jack_1(){
 	n("Jaa, szóval ezt mondta!");
 	n("Én lemaradtam róla, de a nézőtéren mindenki ezen röhögött.");
 	j("Akkor vagy nézd ezentúl felirattal a filmeket, vagy pedig moss fület gyakrabban.");
-	j("Tényleg, te hogyan értelmezted a pörgettyűs jelenetet a végén?");
-	j("Szerinted azt is csak álmodta, vagy pedig már ébren volt?")
+	j("Tényleg, te hogyan értelmezted a pörgettyűs jelenetet a végén? Szerinted azt is csak álmodta, vagy pedig már ébren volt?");
 
 	Choose({
 		"Csak álmodta.": Inception_Dream,
@@ -45,15 +44,16 @@ function Inception_Dream(message){
 	j("Kicsit depressziós vagy, nem?");
 
 	Choose({
-		"Aha, a szívem szinte szétszakad a szüntelen szenvedéstől.": Sadsack,: function(message){
+		"Yup, I'm just a sad sack of sadness.": Sadsack,
+		"Sometimes... but not when I'm with you.": function(message){
 			$.im_a_poet = true;
-
+			
 			n(message);
-			n("Általában... kivéve, amikor veled vagyok.")
-			j("Jaj Nicky, te kis amatőr költő.");
-			n("Hozz francia bagettet és bort, hogy igazán sznob lehessek,");
-			n("...mert ez lesz a legfennköltebb dolog, amit valaha mondtam.");
-			n("Egyébként...");
+			j("Ah Nicky, you amateur poet.");
+			n("Get me some french breads and wine,");
+			n("Coz that's got to be the cheesiest thing I've ever said.");
+			j("Apologize for nothing.");
+			n("Anywho...");
 			Thanks();
 		},
 		"Csak szimplán realista vagyok.": function(message){
