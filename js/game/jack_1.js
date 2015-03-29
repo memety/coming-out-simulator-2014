@@ -52,7 +52,7 @@ function Inception_Dream(message){
 			j("Jaj Nicky, te kis amatőr költő.");
 			n("Hozz francia bagettet és bort, hogy igazán sznob lehessek,");
 			n("...mert ez lesz a legfennköltebb dolog, amit valaha mondtam.");
-			n("Anywho...");
+			n("Egyébként...");
 			Thanks();
 		},
 		"Csak szimplán realista vagyok.": function(message){
@@ -74,25 +74,26 @@ function Inception_Awake(message){
 
 	n(message);
 	n("Ellenkező esetben az egész film hazugság lenne.");
-	n("És mi értelme egy hazugságban leélt életnek");
-	j("Ah Nicky, you amateur poet.");
-	j("I take it you liked the film?");
+	n("És mi értelme egy hazugságban leélt életnek?");
+	j("Jaj Nicky, te kis amatőr költő.");
+	j("Tényleg, összességében hogy tetszett a film?");
 
 	Choose({
-		"Aw yiss. Yes I did.": function(message){
+		"Jaaaaj, nagyon!": function(message){
 			n(message);
 			Thanks();
 		},
-		"Mehhh, it was a tad confusing at times.": function(message){
+		"Mehhh, hát néhányszor eléggé felkavaró volt.": function(message){
 			n(message);
-			j("I believe that was the purpose.");
-			n("Mission accomplished, then.");
-			n("Anywho...");
+			j("Szerintem ez volt a cél.");
+			n("Akkor küldetés teljesítve.");
+			n("Egyébként...");
 			Thanks();
 		},
 		"BWOOOOOOOOOOONG": function(message){
 			n(message);
-			j("I'll interpret that as a yes.");
+			j("Ezt igenként értelmezem.");
+			n("Egyébként...")
 			Thanks();
 		}
 	});
@@ -154,37 +155,37 @@ function Sadsack(message){
 
 function Thanks(){
 	
-	n("So yeah! Thanks for taking me out to watch Inception!");
-	j("My pleasure, Nicky.");
-	j("You should parody Inception in that odd web game of yours!");
-	n("Mmm, maybe maybe.");
-	n("Let's meet again tomorrow evening!");
+	n("...szeretném megköszönni, hogy rábeszéltél végül az Eredetre.");
+	j("Enyém az öröm.");
+	j("Különben meg kellene csinálnod az Eredet paródiáját egy ilyen webes játékban!");
+	n("Hmm, végülis...");
+	n("Vagy inkább találkozzunk holnap este!");
 
-	j("Although...");
-	n("Hope I can convince the parents to let me out overnight.");
+	j("Hát...");
+	n("Remélem meg tudom győzni anyámékat, hogy engedjenek ki éjszakára is.");
 
-	j("I wish you didn't tell your mom and dad we were just studying, when we were actually at the cinema.");
-	n("I'll pretend we'll be cramming for the midterms all nigh-- huh?");
+	j("Remélem nem azt mondtad nekik megint, hogy csak tanultunk, miközben moziban voltunk.");
+	n("Majd úgy teszek, mintha egész éjjel a félévi vizsgákra készültünk volna, jó?");
 
-	j("You can't keep hiding like this.");
+	j("Egy ilyen kaliberű dologról nem hazudhatsz akármeddig.");
 	n("Jack...");
 
 	Choose({
-		"They can never, ever know.": function(message){
+		"Ők sohasem tudhatják meg.": function(message){
 			$.coming_out_readiness="no";
 			n(message);
-			j("Really, never?");
+			j("Nicky, most komolyan; soha?");
 			Hiding();
 		},
-		"I wish I could tell them, too.": function(message){
+		"Bár elmondhatnám nekik az igazat.": function(message){
 			$.coming_out_readiness="yes";
 			n(message);
 			Hiding();
 		},
-		"I'm not ready to tell them yet.": function(message){
+		"Még nem készültem fel rá, hogy beavassam őket.": function(message){
 			$.coming_out_readiness="maybe";
 			n(message);
-			j("I can help you be ready.");
+			j("Szívesen segítek benne, ha gondolod.");
 			Hiding();
 		}
 	});
@@ -193,22 +194,22 @@ function Thanks(){
 
 function Hiding(){
 
-	j("Nicky, hiding like this is eating away at your soul.");
+	j("Nicky, ez a rejtőzködés felemészti a lelked is.");
 
 	if($.inception_answer=="awake"){
-		j("Like you said, what's the point of living a lie?");
+		j("Ahogy te is mondtad az előbb, 'mi értelme egy hazugságban leélt életnek'?");
 	}
 	if($.inception_answer=="dream"){
-		j("It's... how'd you put it... 'a big fat lie'?");
+		j("Ez így nem egy... hogy is mondtad az előbb? Nem egy nagy, kövér hazugság?");
 	}
 
 	if($.sadsack){
-		j("When you said just now you're a sadsack?");
-		j("I know you weren't joking. Not really.");
+		j("Az előbb azt mondtad, hogy a szíved szétszakad a szenvedéstől.");
+		j("Tudom, hogy nem csak vicceltél.");
 	}
 
-	n("Jack, come on.");
-	j("I came out to my parents last year.");
+	n("Jaj Jack, ugyan már...");
+	j("Én már előbújtam a szüleimnek tavaly.");
 	if($.hippies){
 		n("That's NOT a fair comparison.");
 		n("LIKE I SAID, you and your parents are a bunch of new-age hippies.");
