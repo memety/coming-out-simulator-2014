@@ -73,8 +73,8 @@ function Inception_Awake(message){
 	$.im_a_poet = true;
 
 	n(message);
-	n("Otherwise, the whole movie would've all just been a lie.");
-	n("What's the point of living a lie?");
+	n("Ellenkező esetben az egész film hazugság lenne.");
+	n("És mi értelme egy hazugságban leélt életnek");
 	j("Ah Nicky, you amateur poet.");
 	j("I take it you liked the film?");
 
