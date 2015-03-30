@@ -104,11 +104,11 @@ function Inception_Neither(message){
 	$.inception_answer = "neither";
 
 	n(message);
-	j("Oh?");
-	n("He didn't even bother looking to see if the top fell!");
-	n("Lies, truths, or half-truths... Cobbs no longer cares.");
-	n("He's finally happy, and that's all that matters.");
-	j("You either are being quite poetic, or quite depressing.");
+	j("Hmm?");
+	n("Nem is érdekelte, hogy eldől-e a toteme.");
+	n("Hazugság vagy igazság... Cobbsot már nem érdekelte.");
+	n("Végre boldog volt, csak ez számított.");
+	j("Vagy nagyon költői vagy, vagy nagyon depresszív.");
 
 	Choose({
 		"I'm a poet, and I didn't even know it.": function(message){
