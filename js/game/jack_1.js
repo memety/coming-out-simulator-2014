@@ -252,7 +252,6 @@ function Hiding_2(message){
 
 	if($.im_a_poet){
 		n("Heh, te majdnem olyan jó lennél amatőr költőnek, mint én.");
-	}else{
 		j("Leszámítva, hogy én igazi verseket is írok.");
 	}
 
@@ -291,9 +290,9 @@ function Hiding_3(message){
 		case "neither": j("Szerintem sem számít, amíg Cobb elégedett az életével."); break;
 	}
 	n("Oh.");
-	j("Okay.");
+	j("Rendben.");
 	if($.coming_out_readiness=="maybe"){
-		j("Remélem meggondolod magad és végül elmondod nekik'.");
+		j("Azért remélem meggondolod magad és végül elmondod nekik'.");
 	}
 	j("Sok szerencsét. Majd írj egy óra múlva.");
 
