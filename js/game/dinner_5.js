@@ -217,7 +217,7 @@ function Getting_A_Tutor(){
 		"Már van pasim.": function(message){
 			n(message);
 			f("Így van fiam! Te leszel a pasija!");
-			n("<i>Nekem van</i>. <i>Nekem van</i> pa--");
+			n("<i>Nekem van</i>. Nekem van pa--");
 			Getting_A_Tutor_2();
 		}
 	});
