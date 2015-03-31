@@ -179,10 +179,10 @@ function Tell_Me_A_Lie(message){
 	// Weave in -- top or bottom
 
 	Choose({
-		"I guess edible undies are both food & clothing.": function(message){
+		"Azt hittem, csak női fehérneműből létezik ehető verzió.": function(message){
 			$.outro_convo_lie = 1;
 			p(message);
-			N("And thanks to my flexibility, the luggage bag doubles as housing!");
+			N("!");
 			Tell_Me_A_Lie_2();
 		},
 		"This story is a fractal of fracked up.": function(message){
