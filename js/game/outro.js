@@ -179,49 +179,49 @@ function Tell_Me_A_Lie(message){
 	// Weave in -- top or bottom
 
 	Choose({
-		"I guess edible undies are both food & clothing.": function(message){
+		"Asszem az ehető alsó ruházkodást és kajálást is egyszerre jelent.": function(message){
 			$.outro_convo_lie = 1;
 			p(message);
-			N("And thanks to my flexibility, the luggage bag doubles as housing!");
+			N("A rugalmasságomnak hála kevés helyet foglalok!");
 			Tell_Me_A_Lie_2();
 		},
-		"This story is a fractal of fracked up.": function(message){
+		"Ez egy elbaszott sztori a baszásról.": function(message){
 			$.outro_convo_lie = 2;
 			p(message);
-			N("MY STORY. MY RULES.");
+			N("AZ ÉN SZTORIM. AZ ÉN SZABÁLYAIM.");
 			Tell_Me_A_Lie_2();
 		},
 		"...\"manther\".": function(message){
 			$.outro_convo_lie = 3;
 			p(message);
-			N("Also known as a faguar.");
+			N("Faguarként is ismerik.");
 			Tell_Me_A_Lie_2();
 		}
 	});
 }
 function Tell_Me_A_Lie_2(){
 	
-	N("They took me in as their foster child, and I was their full-time boytoy.");
+	N("Befogadtam mint árvát és én lettem a kis játékszerük.");
 
 	if($.outro_convo_lie==1){
-		p("...Thanks again to your, uh, flexibility.");
+		p("...Kösz mégegyszer a rugalmasságodnak.");
 	}
 
 	switch($.top_or_bottom){
-		case "top": N("As we know, I like having my partners be 'the woman' of a relationship."); break;
-		case "bottom": N("As we know, I'm usually 'the woman' of a relationship."); break;
-		case "versatile": N("As we know, I like taking turns at being 'the woman' of a relationship."); break;
+		case "top": N("Mint tudjuk, általában a féfri vagyok a párkapcsolatokban."); break;
+		case "bottom": N("Mint tudjuk, általában én vagyok a nő a párkapcsolatokban."); break;
+		case "versatile": N("Mint tudjuk, szeretek lány is lenni a párkapcsolatokban."); break;
 	}
 
-	N("They raised me, showed me love, and I grew up to be a productive member of society.");
+	N("Felneveltek, szerettek és a társadalom produktív tagjává tettek.");
 
 	switch($.outro_convo_lie){
-		case 2: p("And when you zoom in on this fractal, there's MORE fracked-up-ness."); break;
+		case 2: p("És ha közelebbről megnézed ezt a repedést, benne mégtöbb repedés van."); break;
 		case 3: p("...\"MANTHER\"."); break;
 	}
 
-	N("They were my new family.");
-	N("Family... with benefits.");
+	N("Ők lettek az új családom.");
+	N("Család... extrákkal.");
 
 	p(". . .");
 
@@ -245,43 +245,43 @@ function Tell_Me_A_Truth(message){
 	Show("nicky","coffee_nicky_still");
 	Show("cup","cup_steam");
 
-	N("Here it goes.");
+	N("Íme.");
 	Is_Last_Story();
 
-	N("I took Jack's advice and parodied Inception in my 'odd web game', Reimagine :The Game:.");
+	N("Megfogadtam Jack tanácsát és kiparodizáltam az Eredetet az új játékomban.");
 	switch($.inception_answer){
-		case "awake": N("Didn't say that Cobbs was awake in the ending, though."); break;
-		case "dream": N("Didn't say that the movie was all just a dream, though."); break;
-		case "neither": N("Still think it doesn't matter if Cobbs was still dreaming."); break;
+		case "awake": N("Nem mondtam, hogy Cobbs ébren volt a végén."); break;
+		case "dream": N("Nem is mondtam hogy a film csak álom lett volna."); break;
+		case "neither": N("Még mindig nem hiszem hogy számítana hogy Cobbs még álmodik-e."); break;
 	}
 	N("Reimagine :The Game: got internet-famous-ish! A good portfolio piece.");
-	N("A few months later, I landed an internship at Electronic Arts in the Bay Area. Far away from my family in Canada.");
+	N("Néhány hónappal később gyakornok lettem az EA-nál Bay Area-ban. Messze a családomtól.");
 
 	Choose({
-		"Eww, Electronic Arts...?": function(message){
+		"Őő, Electronic Arts...?": function(message){
 			$.outro_convo_truth = 3;
 			p(message);
 
-			N("Yeah, I know, I know.");
-			N("I'm now repenting for my sins by making artsy-fartsy indie games like this one.");
-			p("Repent harder, dammit.");
+			N("Ja, tudom, tudom.");
+			N("Már bánom, hogy ilyen kis béna játékokat csináltam, mint ez is.");
+			p("Hát bánjad is, de gyorsan.");
 			Tell_Me_A_Truth_2();
 		},
-		"And the Bay Area is very LGBT friendly.": function(message){
+		"És a Bay Area LGBT barát.": function(message){
 			$.outro_convo_truth = 2;
 			p(message);
 
-			N("That's why they call it the Gay Area!");
-			p("Uh.. nobody calls it that.");
+			N("Ezért hívják meleg vidéknek!");
+			p("Senki nem hívja így.");
 			Tell_Me_A_Truth_2();
 		},
-		"Oh, I love EA! They make The Sims, right?": function(message){
+		"Ó, az EA király, ők csináltál a Simset, nem?": function(message){
 			$.outro_convo_truth = 1;
 			p(message);
 
-			N("Yup! I didn't work on those, though. Our team was making a web game version of--");
-			N("[LITERALLY CANNOT DISCLOSE]");
-			p("Oh.");
+			N("Ja! Bár én nem azon dolgozom, hanem egy webes verzióján a--");
+			N("[NEM FEDHETEM FEL]");
+			p("Ó.");
 			Tell_Me_A_Truth_2();
 		}
 	});
@@ -289,17 +289,17 @@ function Tell_Me_A_Truth(message){
 }
 function Tell_Me_A_Truth_2(){
 	
-	N("After EA, I went on to go indie.");
-	N("But I stayed in touch with friends at EA, and stayed in the Bay Area.");
+	N("Az EA után független lettem.");
+	N("De még mindig beszélek a barátaimmal az EA-tól, és Bay Area-ban maradtam.");
 
-	N("My technical skills grew.");
-	N("My social skills grew.");
-	N("And here... I'm finally starting to figure out my identity.");
+	N("Professzionálisan is fejlődtem.");
+	N("És szociálisan is.");
+	N("És itt... Végre kezdek magamra találni.");
 
 	switch($.outro_convo_truth){
-		case 1: p("Well, I'm looking forward to Literally Cannot Disclose: The Game."); break;
-		case 2: p("But seriously, no one calls it the Gay Area."); break;
-		case 3: p("But seriously, ew. Electronic Arts."); break;
+		case 1: p("Alig várom hogy bejelentsem a játékot."); break;
+		case 2: p("De komolyan, senki sem hívja meleg vidéknek."); break;
+		case 3: p("De most komolyan. Electronic Arts."); break;
 	}
 
 	Closure_Story();
@@ -321,40 +321,40 @@ function Tell_Me_A_Half_Truth(message){
 	Show("nicky","coffee_nicky_still");
 	Show("cup","cup_steam");
 
-	N("As you wish.");
+	N("Ahogy kívánod.");
 	Is_Last_Story();
 
-	N("Claire, in an ironic twist of fate, was also bisexual.");
-	N("We told each other about it during a "+$.studying_subject+" study session.");
+	N("Ironikus, de Claire is kiderült hogy bi.");
+	N("Egy "+$.studying_subject+" órán derült ki.");
 
-	p("What a twist!");
+	p("Micsoda csavar!");
 
-	N("Claire was insecure about her sexual orientation, like me.");
-	N("We were both somewhat inexperienced. Claire's only been with women, and I've only been with Jack.");
+	N("Claire is bizonytalan volt az identitásában, akárcsak én.");
+	N("Mindketten tapasztalatlanok voltunk. Claire lányokkal volt csak addig én meg csak Jackkel.");
 
 	// CLAIRE AND I HELPED EACH OTHER EXPLORE OURSELVES, LESS GUILT, MORE EXPERIENCE.
 	// Weave in -- studying what
 
 	Choose({
-		"A mirror version of you, but reversed...": function(message){
+		"Egy tükörkép rólad, csak fordítva...": function(message){
 			$.outro_convo_half_truth = 1;
 			p(message);
-			N("Well, uh, all mirror images are reversed.");
-			p("You know what I mean.");
-			N("But yeah, Claire and I shared our experiences with one another.");
+			N(Hát, a tükörképek fordítottak.");
+			p("Tudod hogyan értem.");
+			N("De amúgy ja, cseréltünk ám tapasztalatokat.");
 			Tell_Me_A_Half_Truth_2();
 		},
-		"So, you taught each other the other side?": function(message){
+		"Szóval megmutattátok egymásnak az ellenkező nem szépségeit?": function(message){
 			$.outro_convo_half_truth = 3;
 			p(message);
 			Tell_Me_A_Half_Truth_2();
 		},
-		"Did you end up having sexytimes together?": function(message){
+		"Végül kefélni kezdtetek?": function(message){
 			$.outro_convo_half_truth = 2;
 			p(message);
-			N("No. She's like a sister to me. A sister I would not have sex with.");
-			p("You... did not need to clarify that.");
-			N("But yeah, Claire and I shared our experiences with one another.");
+			N("Olyan mintha a húgom lenne. Az ember nem kefél a húgával.");
+			p("Nem kell ám belemenni a részletekbe.");
+			N("De amúgy ja, cseréltünk ám tapasztalatokat.");
 			Tell_Me_A_Half_Truth_2();
 		}
 	});
@@ -362,21 +362,21 @@ function Tell_Me_A_Half_Truth(message){
 }
 function Tell_Me_A_Half_Truth_2(){
 	
-	N("And exchanged tips!");
-	N("Like... do a 'come hither' motion with your fingers, or, rub the head against the roof of your mouth.");
-	p("T.M.I, dude...");
+	N("És tippeket!");
+	N("És nyelvmozdulatokat.");
+	p("Jó, nyugi, haver...");
 
 	if($.changing_schools || !$.father_oblivious){
-		N("I did move to her school, in the end.");
+		N("A végén mégis átkerültem az ő sulijába.");
 	}
 
-	N("We were best friends. We still are! We've now both moved to the US, far away from our hateful families.");
-	N("Together, we helped each other overcome our insecurities, and discover who we were...");
-	N("Proud bisexual sluts.");
+	N("Legjobb barátok voltunk és még mindig azok vagyunk! Ma mindketten az államokban élünk, messze az utálatos családainktól..");
+	N("Segítettünk egymásnak túllépni a bizonytalanságokon és felfedezni önmagunkat...");
+	N("Büszke bi ribancok.");
 
-	p("What a touching story. I think.");
+	p("Milyen megható történet. Asszem.");
 	
-	N("And of course, we wingman/wingwoman for each other.");
+	N("És persze egymás szárnysegédei.");
 
 	p(". . .");
 
@@ -390,7 +390,7 @@ function Tell_Me_A_Half_Truth_2(){
 
 function Finale_1(){
 	
-	N("And that's the last of the post-coming-out stories!");
+	N("És ez az utolsó coming-out utáni rész!");
 
 	// HACK - Just clear dialogue & stuff.
 	Wait(1000);
@@ -405,36 +405,36 @@ function Finale_1(){
 
 	//////////////////////////
 
-	N("Dear player, I couldn't help but notice...");
+	N("Kedves játékos, nem tudtam nem észrevenni, hogy...");
 	if($.order_of_stories[0]=="truth"){
-		N("You went straight for the Truth first.");
+		N("Az igazságot választottad először.");
 	}else if($.order_of_stories[2]=="truth"){
-		N("You saved the Truth for last.");
+		N("Az igazságot hagytad utoljára.");
 	}else if($.order_of_stories[0]=="lie"){
-		N("You wanted to hear the Lie first.");
+		N("A hazugságot akartad először hallani.");
 	}else{
-		N("You saved the Lie for last.");
+		N("A hazugságot hagytad utoljára.");
 	}
-	N("What does that say about you?...");
+	N("Mit mond ez el rólad?...");
 	p(". . .");
 
-	p("You know... usually when a game gives you multiple endings, they don't do them ALL AT ONCE.");
-	N("Hah! You thought these were ENDINGS?");
+	p("Tudod... Általában, ha egy játéknak több lehetséges befejezése is van, nem mindegyik egyszerre játszódik le.");
+	N("Haha, azt gondoltad van itt egyáltalán befejezés?");
 
 	Choose({
-		"Let me guess... This Is Just The Beginning?": function(message){
+		"Hadd találgassak... Ez még csak a kezdet?": function(message){
 			p(message);
-			N("This is just the begi-- oh. Okay, yeah.");
+			N("Ez még csak a-- ó. Ja, így van.");
 			Finale_2();
 		},
-		"Well yeah. This game's over, right?": function(message){
+		"Hát ja. Na, ennek a játéknak vége, ugye?": function(message){
 			p(message);
-			N("True... but the story, which is my story, my life, continues.");
+			N("Igen, de a történet, ami az én személyes történetem, folytatódik.");
 			Finale_2();
 		},
-		"oh god how long IS this damn game.": function(message){
+		"basszus milyen hosszú még ez a játék?.": function(message){
 			p(message);
-			N("Don't worry. Your next choice is the very last one, I swear.");
+			N("Nyugi, a következő kattintás az utcsó, ígérem.");
 			Finale_2();
 		}
 	});
@@ -446,9 +446,9 @@ function Finale_2(){
 	Show("nicky","coffee_nicky_packup_1");
 
 	N(". . .");
-	N("You know, if I could go back and relive all my other possible choices...");
-	N("... which in a sense, I did, by writing this game...");
-	N("... I wouldn't change a thing.");
+	N("Tudod, ha visszamehetnék és újraélhetnék minden lehetséges döntést ezzel kapcsolatban...");
+	N("... amit valamilyen módon meg is tettem ezzel a játékkal...");
+	N("... Nem változtatnék semmin.");
 
 	Show("nicky","coffee_nicky_packup_2");
 
@@ -459,21 +459,21 @@ function Finale_2(){
 	p("? ? ?");
 
 	if($.punched){
-		N("My texts getting read. Being forced to change schools. Getting punched in the face.");
+		N("Az elolvasott smseim. Hogy iskolát kellett váltanom. A pofon.");
 	}else if($.father_oblivious==false){
-		N("My texts getting read. Being forced to change schools. All the verbal abuse.");
+		N("Az elolvasott smseim. Hogy iskolát kellett váltanom. Az összes szóbeli sérelem.");
 	}else if($.changing_schools){
-		N("My texts getting read. Being forced to change schools. The attempted 'gay rehab' with Claire.");	
+		N("Az elolvasott smseim. Hogy iskolát kellett váltanom. A "melegrehab" ötlete Clairrel.");	
 	}else{
-		N("My texts getting read. No more after-school hours to myself. The attempted 'gay rehab' with Claire.");
+		N("Az elolvasott smseim. Hogy nincs több szabad órám iskola után. A "melegrehab" ötlete Clairrel.");
 	}
 
-	N("In a Stockholm Syndrome sort of sense... I'm grateful for it all.");
+	N("A dolog maga Stockholm szindrómás értelmében az egészért hálás vagyok.");
 
 	Choose({
-		"what.": Finale_3,
-		"whaaat.": Finale_3,
-		"whaaaaaaaaaaaaaaat.": Finale_3
+		"mi van?": Finale_3,
+		"mi vaan?": Finale_3,
+		"mi vaaaaaaaaaaaaaaan?.": Finale_3
 	});
 
 }
@@ -485,28 +485,28 @@ function Finale_3(message){
 	PlaySound("sfx","laptop_pack");
 	Show("nicky","coffee_nicky_packup_3");
 
-	N("Yes, really!");
-	N("I wouldn't have been so motivated to forge my own life... if my previous life wasn't total utter shit.");
+	N("Igen, nagyon!");
+	N("Nem lettem volna ilyen motivált abban, hogy a saját sorsom kovácsa legyek... ha ezt megelőzően nem lett volna az életem totálisan szar.");
 
 	PlaySound("sfx","laptop_pack_2");
 	Show("nicky","coffee_nicky_packup_4");
 
 	N("Later in 2010, Dan Savage launched the It Gets Better&trade; campaign.");
-	N("My three stories... Lie, Truth, Half-Truth... they're all at least true about one thing.");
-	N("It does get better.");
+	N("A három történetem... Hazugság,  igazság, féligazság... legalább egy dolog igaz mindháromra.");
+	N("Hogy idővel jobb lesz.");
 
 	p(". . .");
 
-	N("And...");
-	N("At the end...");
-	N("Of this long, stupid, painful game...");
-	N("Where I played against people who should have been on my side...");
+	N("És...");
+	N("Végül...");
+	N("Ebben a hosszú, buta és fájdalmas játékban...");
+	N("Ahol azok ellen játszottam, akiknek mellettem kellett volna állniuk...");
 
 	p(". . .");
 
-	N("I won.");
+	N("Én nyertem.");
 	N(". . .");
-	N("I won.");
+	N("Én nyertem.");
 
 	// HACK - Just clear dialogue & stuff.
 	Wait(1000);
