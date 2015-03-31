@@ -64,7 +64,7 @@ function Casual(){
 			$.grounded = 2;
 			f("Nick! Egy hét szobafogság!");
 			f("Ne sértegesd anyád főztjét!");
-			f("Így is épp elég nehéz elviselnünk, hogy ilyen rosszul főz. Höhö!");
+			f("Így is épp elég büntetés az nekünk, hogy ilyen borzalmasan főz. Höhö!");
 
 			Casual_2();
 
@@ -183,7 +183,7 @@ function Getting_A_Tutor(){
 
 	switch($.promise_silence){
 		case "yes":
-			n("Anya, tudod, <i>megegyeztünk abban</>, hogy nem beszélünk többet erről, mert...");
+			n("Anya, tudod, <i>megegyeztünk abban</i>, hogy nem beszélünk többet erről, mert...");
 			if($.tried_talking_about_it){
 				m("Igaz, tényleg nem hozom szóba többet és <i>neked sem kell</i>...");
 			}
@@ -193,15 +193,15 @@ function Getting_A_Tutor(){
 			m("Kettőnk közül pont, hogy te vagy az, aki nem tartja be, amit mond!");
 			break;
 		case "tit for tat":
-			n("Anya, azt mondtad, nem hozod ezt szóba többet, ha én sem hozom szóba, hogy--");
+			n("Anya, azt mondtad, nem hozod ezt szóba többet, ha én sem hozom szóba, hogy...");
 			if($.tried_talking_about_it){
-				m("Hogy nem is akarsz igazából semmit se szóba hozni.");
+				m("Nem is akarsz igazából semmit se szóba hozni.");
 			}
 			break;
 	}
 
-	f("Mit nem akartok szóba hozni??...");
-	f("Ebben a családban én vagyok főnök, ti ketten pedig titkoltok valamit előlem!c.");
+	f("Mit nem akartok szóba hozni?");
+	f("Ebben a családban én vagyok főnök, ti ketten pedig titkoltok valamit előlem!");
 	m("Ó.. hát tulajdonképpen csak arról van szó, hogy Nick nagyon-nagyon kedveli Claire-t.");
 
 	Choose({
@@ -210,7 +210,7 @@ function Getting_A_Tutor(){
 			f("Jaj ne legyél ilyen kis szégyellős.");
 			Getting_A_Tutor_2();
 		},
-		"Végre. Most már végre neked is kezd derengeni a dolog! Claire egyébként nekem is nagyon bejön!": function(message){
+		"Végre. Most már talán neked is kezd derengeni a dolog! Claire egyébként nekem is nagyon bejön!": function(message){
 			n(message);
 			Getting_A_Tutor_2();
 		},
@@ -288,7 +288,7 @@ function Agree_With_Dad(){
 			n(message);
 
 			f("...Óó.");
-			f("Hát igen, miuszáj lesz feltornásznod a jegyeidet.");
+			f("Hát igen, miuszáj lesz feltornásznod őket.");
 
 			Show("dad","dad_serious");
 
@@ -313,7 +313,7 @@ function Agree_With_Dad(){
 			
 			m("...Nick!");
 			f(". . .");
-			f("   Széééééééép!");
+			f("Széééééééép!");
 			m("...de drágám!");
 			f("Várj csak, ugye nem azért volt ez annyira titkos, mert öhm.. teherbe ejtetted?");
 			n("Dehogy. Nem vagyok hülye.");
@@ -360,7 +360,7 @@ function Agreeable_Ending(){
 			}else{
 				f("Komolyan, most már értem, miért olyan rosszak a jegyeid "+$.studying_subject+"ból.");
 			}
-			f("Viszont ez csak egy <i>film</i>!");
+			f("Viszont ez <i>csak egy film</i>!");
 			f("Ugyan, ennyi sötétséget csak nem örököltél az anyádtól! Haha!");
 			n("Ha-ha.");
 			Dinner_Ending();
