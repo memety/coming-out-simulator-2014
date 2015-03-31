@@ -21,7 +21,7 @@ function Start_Outro(){
 	if($.breaking_up_soon){
 		N("Aztán három hét múlva szakítottunk.");
 	}else{
-		N("Aztán három hét múlva szakítottunk.");
+		N("Aztán három hét múlva szakkítottunk.");
 	}
 
 	// Weave - intro
