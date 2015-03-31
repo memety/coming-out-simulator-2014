@@ -111,29 +111,29 @@ function Inception_Neither(message){
 	j("Vagy nagyon költői vagy, vagy nagyon depresszív.");
 
 	Choose({
-		"I'm a poet, and I didn't even know it.": function(message){
+		"Költő vagyok, akiben ez csak most tudatosult.": function(message){
 
 			$.im_a_poet = true;
 
-			n("I'm a poet,");
-			n("and I wasn't even aware of the fact.");
-			j("You're a lyrical miracle, the evidence is empircal.");
-			n("That's hysterical.");
-			n("Anywho...");
+			n("Költő vagyok,");
+			n("és eddig még csak tudatában sem voltam ennek a ténynek.");
+			j("Ami tény, az tény, igazi ékköve vagy a koszorús költőknek.");
+			n("Nagyon vicces.");
+			n("Egyébként...");
 			Thanks();
 
 		},
-		"Nah, I'm just a sad sack of sadness.": Sadsack,
-		"Or both.":function(message){
+		"A szívem szinte szétszakad a... blablabla.": Sadsack,
+		"Valami ilyesmi.":function(message){
 
 			$.hippies = true;
 			$.im_a_poet = true;
 
 			n(message);
-			n("POETRY IS PAIN. ART IS SUFFERING.");
-			j("You sound like my mother.");
-			n("Your parents are <i>such</i> new-age hippies.");
-			n("Anywho...");
+			n("A KÖLTÉSZET FÁJDALOM. A MŰVÉSZET SZENVEDÉS.");
+			j("Úgy beszélsz, mint az anyám.");
+			n("A szüleid <i>annyira</i> hippik.");
+			n("Egyébként...");
 			Thanks();
 
 		}
@@ -146,9 +146,9 @@ function Sadsack(message){
 	$.sadsack = true;
 
 	n(message);
-	j("Aw, sorry to hear that.");
-	j("I hope our little date at the movies cheered you up?");
-	n("Sure did!");
+	j("Sajnálom.");
+	j("Remélem, azért a kis mozis randink kicsit megdobta a kedved.");
+	n("Naná!");
 	Thanks();
 
 }
@@ -211,23 +211,23 @@ function Hiding(){
 	n("Jaj Jack, ugyan már...");
 	j("Én már előbújtam a szüleimnek tavaly.");
 	if($.hippies){
-		n("That's NOT a fair comparison.");
-		n("LIKE I SAID, you and your parents are a bunch of new-age hippies.");
-		n("When I'm at your place, I can't tell if all the smoke is incense or marijuana.");
-		j("Hey! We only smoke weed every other day!");
-		n("Heh.");
-		j("The point is, my parents supported my coming out.");
+		n("Ez így egyáltalán nem fair!");
+		n("Ahogy azt már mondtam, te és a szüleid megrögzött hippik vagytok!");
+		n("Amikor nálatok vagyok, könyökölni lehet a fűszagra.");
+		j("Hé! Csak minden másnap tépünk, oké?");
+		n("Remek.");
+		j("A lényeg, hogy a szüleim tökre támogatják az előbújást.");
 	}else{
-		j("And they were very supportive!");
+		j("És ami még fontosabb, velem is nagyon megértőek voltak!");
 	}
 
-	j("You're in Canada now. A lot of people here are LGBT friendly.");
-	j("How do you know your parents won't be supportive of you, too?");
+	j("Most Kanadában vagy. Itt az emberek többsége pozitívan viszonyul az ilyesmihez.");
+	j("Miért gondolod, hogy pont a szüleid nem lennének megértőek?");
 
 	Choose({
-		"Asian parents are usually very homophobic.": Hiding_2,
-		"I don't know... I guess I haven't tried...": Hiding_2,
-		"They don't support anything but STUDYING.": Hiding_2
+		"Az ázsiai szülők általában nagyon homofóbok.": Hiding_2,
+		"Nem tudom... Talán tényleg csak rá kellene szánnom magam.": Hiding_2,
+		"Ők a tanulást leszámítva semmmit sem támogatnak.": Hiding_2
 	});
 
 }
@@ -237,36 +237,37 @@ function Hiding_2(message){
 	n(message);
 
 	if($.coming_out_readiness=="no"){
-		n("Again... They can never, ever know.");
+		n("Még egyszer; ők SOHA NEM TUDHATJÁK MEG.");
 	}
 
-	j("You have trust issues.");
-	j("You're even texting me instead of calling...");
-	j("...because you think your parents might listen in.");
+	j("Talán csak máshogy kellene hozzáállnod a beszélgetéshez.");
+	j("Velem is mindig csak üzenetekben kommunikálsz telefonálás helyett.");
+	j("...mert azt gondolod, az emberek nem szívesen hallgatnának végig.");
+	j("De ők a szüleid és szeretnek téged.");
 
-	n("They would!");
+	n("Bárcsak...");
 
-	j("This mode of communication.");
-	j("It's imprecise, impersonal, impossible to truly connect.");
+	j("Oké, az üzengetés is a kommunikáció egy fajtája.");
+	j("Egy üres, jellegtelen, érzéketlen és pontatlan formája.");
 
 	if($.im_a_poet){
-		n("Heh. You're an amateur poet like me, apparently.");
+		n("Heh, te majdnem olyan jó lennél amatőr költőnek, mint én.");
 	}else{
-		n("It's not too bad...");
+		j("Leszámítva, hogy én igazi verseket is írok.");
 	}
 
 	if($.coming_out_readiness=="yes"){
-		j("You yourself just said you wish you could tell them.");
-		j("Tell them.");
+		j("Te is azt kívánod magadban, hogy bárcsak elmondhatnád nekik.");
+		j("Tedd meg.");
 	}else{
 		j("Nicky.");
 	}
-	j("Tell them about us. Tonight.");
+	j("Mondd el nekik ma este.");
 
 	Choose({
-		"Tonight?! Heck no.": Hiding_3,
-		"Sigh... I'll try my best.": Hiding_3,
-		"I'll just carefully hint at it.": Hiding_3
+		"Ma este?! Kizárt.": Hiding_3,
+		"Hát... Megpróbálhatom.": Hiding_3,
+		"Inkább majd csak utalok rá óvatosan.": Hiding_3
 	});
 
 }
@@ -275,35 +276,35 @@ function Hiding_3(message){
 	
 	n(message);
 	j(". . .");
-	n("I don't want to freak them out too much.");
-	n("Still need to convince them to let me stay at your place tomorrow night.");
-	n("I'll tell 'em I'm studying with you again.");
+	n("Nem akarom sokkolni a prűd lelkivilágukat.");
+	n("De valahogy meg kell győznöm őket, ha át akarok menni hozzád holnap este.");
+	n("Majd felhozom a tanulást, hogy mennyit segítesz benne.");
 	j(". . .");
-	n("It's dinnertime. I'm heading downstairs now.");
+	n("Kész van a vacsora, le kell mennem a földszintre.");
 
-	j("Hey... I agree.");
-	n("Huh?");
-	j("With your thoughts on the movie ending, that is.");
+	j("Hé... amúgy én egyetértek veled.");
+	n("Mi?");
+	j("A véleményeddel, hogy mit jelentett a film utolsó jelenete.");
 	switch($.inception_answer){
-		case "dream": j("I think Cobbs was still dreaming, living a lie."); break;
-		case "awake": j("I think Cobbs reconnected with his real family, in the real world."); break;
-		case "neither": j("I think it doesn't matter, as long as Cobbs is happy."); break;
+		case "dream": j("Cobb szerintem is benne ragadt egy álomban és hazugságban élt tovább."); break;
+		case "awake": j("Cobb szerintem is csatlakozhatott a családjához a valóságban."); break;
+		case "neither": j("Szerintem sem számít, amíg Cobb elégedett az életével."); break;
 	}
 	n("Oh.");
 	j("Okay.");
 	if($.coming_out_readiness=="maybe"){
-		j("Hope you changed your mind about being 'not ready to tell them yet'.");
+		j("Remélem meggondolod magad és végül elmondod nekik'.");
 	}
-	j("Good luck. Text me in an hour.");
+	j("Sok szerencsét. Majd írj egy óra múlva.");
 
 	var insult = "";
-	if($.hippies) insult+=" new-age hippie";
-	if($.im_a_poet) insult+=" amateur poet";
-	n("See ya.");
+	if($.hippies) insult+=" kis hippi";
+	if($.im_a_poet) insult+=" amatőr költők gyöngye";
+	n("Szia.");
 	if(insult!=""){
-		n("You"+insult+".");
+		n("Te"+insult+".");
 	}else{
-		n("You goof.");
+		n("Te kis gyagyás.");
 	}
 
 	Jack_1_End();
