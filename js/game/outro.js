@@ -70,7 +70,7 @@ function Closure(){
 
 	N("Érdekes, hogy emlékszel rá. Csak az övé különbözik a többi karaktertől.");
 	N("Egyébként minden nevet megváltoztattam természetesen, kivéve az enyémet.");
-	N("Ezt a kicsöcsém érdekében tettem, mert ő még olyan ártatlan.");
+	N("Ezt a kicsöcsém érdekében tettem, mert ő még annyira ártatlan.");
 	N("És az apámat csak visszatettem a történetbe, mert egyébként még 2010 előtt elhagyta a családunkat.");
 
 	if($.main_menu_convo_2==3){
@@ -89,17 +89,17 @@ function Closure(){
 	$.order_of_stories = [];
 
 	Choose({
-		"Haver, tényleg nem tudom, nyögd már ki!.": function(message){
+		"Haver, tényleg nem tudom, nyögd már ki!": function(message){
 			p(message);
 			N("Oké-oké, már is elmondom, mi történt végül.");
 			N("...és mi történt azután, meg azután.");
 			p("MONDD MÁR!");
 			Closure_Story();
 		},
-		"Nyugtass meg, azért végül jobbara fordultak a dolgok, ugye?": function(message){
+		"Nyugtass meg, azért végül jobbra fordultak a dolgok, ugye?": function(message){
 			p(message);
 			N("Persze! Mindhárom verzióban ez történt.");
-			p("DE MI?.");
+			p("DE MI?");
 			Closure_Story();
 		},
 		"Virágok, szivárványok és meleg unikornisok?": function(message){
@@ -139,9 +139,9 @@ function Closure_Story(){
 function Is_Last_Story(){
 	if($.coming_out_stories_left==0){
 		if($.asked_about && $.asked_credits){
-			p("Megint jössza válaszlehetőségekkel, holott így is, úgyis ugyanoda lyukadunk ki...");
+			p("Megint jössz a válaszlehetőségekkel, holott így is, úgyis ugyanoda lyukadunk ki...");
 		}else{
-			p("Miért csináltál több különböző válaszlehetőséget, ha mindegy hová klikkelek, mert csak egyféle vége van a sztorinak?.");
+			p("Miért csináltál több különböző válaszlehetőséget, ha mindegy hová klikkelek, mert csak egyféle vége van a sztorinak?");
 			N("Nem tudom. Haladjunk.");
 		}
 	}
