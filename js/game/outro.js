@@ -71,7 +71,7 @@ function Closure(){
 	N("Érdekes, hogy emlékszel rá. Csak az övé különbözik a többi karaktertől.");
 	N("Egyébként minden nevet megváltoztattam természetesen, kivéve az enyémet.");
 	N("Ezt a kicsöcsém érdekében tettem, mert ő még olyan ártatlan.");
-	N("És zépámat csak visszatettem a történetbe, mert egyébként még 2010 előtt elhagyta a családunkat.");
+	N("És az apámat csak visszatettem a történetbe, mert egyébként még 2010 előtt elhagyta a családunkat.");
 
 	if($.main_menu_convo_2==3){
 		N("Látod mondtam, ez egy igaz történeten alapuló játék tele hazugságokkal.");
