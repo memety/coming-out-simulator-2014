@@ -264,7 +264,7 @@ function Getting_A_Tutor_2(){
 
 	Choose({
 		"Igen.": Agree_With_Dad,
-		"No.": Argue_With_Dad
+		"Nem.": Argue_With_Dad
 	});
 
 }
@@ -379,7 +379,7 @@ function Agreeable_Ending(){
 
 function Argue_With_Dad(){
 
-	n("...Nem.");
+	n("Nem.");
 
 	f("Parancsolsz?");
 	n("Nem. Anya azt mondta, hogy nem találkozhatok többé Jackkel.");
@@ -458,7 +458,7 @@ function Argument_Ending(){
 	n(". . .");
 	m("bruhuuu... bruhuuuhu... bruhuhuuu...");
 
-	f("Anyéd és én random ellenőrizgettük az üzeneteidet az utóbbi időben.");
+	f("Anyád és én random ellenőrizgettük az üzeneteidet az utóbbi időben.");
 	n(". . .");
 	m("brüüh... brühühühüh... [szipog] brühühhh...");
 
