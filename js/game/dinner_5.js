@@ -113,9 +113,9 @@ function Casual_2(){
 
 			f("Igen? Minden?");
 			if($.studying_subject!=$.studying_subject_2){
-				f("Milyen jegyeket hoztál mostanában "+$.studying_subject"ból és "+$.studying_subject_2+"ból?");
+				f("Milyen jegyeket hoztál mostanában "+$.studying_subject+"ból és "+$.studying_subject_2+"ból?");
 			}else{
-				f("Milyen jegyeket hoztál mostanában "+$.studying_subject"ból?");
+				f("Milyen jegyeket hoztál mostanában "+$.studying_subject+"ból?");
 			}
 
 			m("Nick és én pont erről beszélgettünk, amikor hazajöttél.");
