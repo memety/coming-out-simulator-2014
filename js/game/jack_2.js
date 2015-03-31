@@ -24,33 +24,33 @@ function Start_Jack_2(){
 
 	/////////////////////////////
 
-	n("Hey Jack.");
+	n("Szia.");
 	if($.sadsack){
-		j("Hello, Nicky darling. Still a sad sack of sadness?");
+		j("Szia drága. Még mindig szét szeretne szakadni a szíved?");
 	}else{
-		j("Hello, Nicky darling.");
+		j("Szia drága.");
 	}
-	j("How was coming out to your parents? Did I tell you so, or did I tell you so?");
+	j("Milyen volt előbújni a szüleidnek? Megmondtam, vagy megmondtam?");
 
 	Choose({
-		"Jack... we messed up big time, Jack.": function(message){
+		"Jack... ezt rohadtul elbasztuk.": function(message){
 			n(message);
-			j("No... no, no.");
-			j("You're kidding me, right? What happened?");
+			j("Ne. Ne ne ne...");
+			j("Csak viccelsz, ugye? Mi történt?");
 			What_Happened();
 		},
-		"Things could have been worse.": function(message){
+		"Csak egyszerűen szarul alakultak a dolgok.": function(message){
 			n(message);
-			j("Oh. Oh no.");
-			j("I didn't expect that they'd... what... what happened?");
+			j("Jaj, nagyon sajnálom.");
+			j("Nem számítottam rá, hogy így lesz, mert... mi történt?");
 			What_Happened();
 		},
-		"Shut up, Jack.": function(message){
+		"Fogd be, Jack.": function(message){
 			n(message);
-			j("Ha, yes, I knew I was right!");
-			n("No. Jack, we can't see each other ever again.");
-			j("Wait.");
-			j("No, no, no. You're kidding me, right? What happened?");
+			j("Hoppá, ez az, tudtam, hogy igazam lesz!");
+			n("Nem. Jack, többé nem találkozhatunk.");
+			j("Várj. Mi?!");
+			j("Nenenenene, csak viccelsz, ugye? Mi történt?");
 			What_Happened();
 		}
 	});
@@ -61,29 +61,29 @@ function What_Happened(){
 
 	if($.punched){
 		Choose({
-			"My dad punched me in the face.": What_Happened_Abuse,
-			"They're making me change schools.": What_Happened_School,
-			"They read all our texts.": What_Happened_Texts
+			"Apám lekevert egyet.": What_Happened_Abuse,
+			"Arra kényszerítenek, hogy iskolát váltsak.": What_Happened_School,
+			"Elolvasták az összes üzenetemet.": What_Happened_Texts
 		});
 	}else if($.father_oblivious==false){
 		Choose({
-			"My parents got verbally violent with each other.": What_Happened_Abuse,
-			"They're making me change schools.": What_Happened_School,
-			"They read all our texts.": What_Happened_Texts
+			"Fenyegettek és üvöltöztek velem.": What_Happened_Abuse,
+			"Arra kényszerítenek hogy iskolát váltsak.": What_Happened_School,
+			"Elolvasták az összes üzenetemet.": What_Happened_Texts
 		});
 	}else{
-		n("Well, my dad's oblivious. For now. But my mom...");
+		n("Nos, apám még csak elfelejti. De anyám...");
 		if($.changing_schools){
 			Choose({
-				"She's making me change schools.": What_Happened_School,
-				"She's setting me up with a girl I've never met.": What_Happened_Girl,
-				"She read all our texts.": What_Happened_Texts,
+				"Arra kényszerít, hogy iskolát váltsak.": What_Happened_School,
+				"Össze akar hozni egy lánnyal, akit még sose láttam.": What_Happened_Girl,
+				"Elolvasta az összes üzenetemet.": What_Happened_Texts,
 			});
 		}else{
 			Choose({
-				"She got a tutor to kill all my after-school hours.": What_Happened_School,
-				"She's setting me up with a girl I've never met.": What_Happened_Girl,
-				"She read all our texts.": What_Happened_Texts,
+				"Arra kényszerít, hogy az összes szabadidőmben korrepetálásra járjak.": What_Happened_School,
+				"Össze akar hozni egy lánnyal, akit még sose láttam.": What_Happened_Girl,
+				"Elolvasta az összes üzenetemet.": What_Happened_Texts,
 			});
 		}
 	}
@@ -94,11 +94,11 @@ function What_Happened_Abuse(message){
 	$.told_jack = "abuse";
 
 	n(message);
-	j("Oh my god!");
-	j("Nicky, you need to call Child Protective Services.");
-	n("What?! No. That's way too much.");
-	j("Just... okay, but at least promise me you'll visit the school counselor tomorrow?");
-	n("Fine.");
+	j("Jesszus!");
+	j("Nicky, szólnod kell a gyámügyeseknek.");
+	n("Mi?! Dehogy. Nem akarom ennyire felfújni a dolgot.");
+	j("Oké, de akkor ígérd meg, hogy legalább az iskolapszichológussal beszélsz.");
+	n("Megígérem.");
 	j(". . .");
 	What_Happened_2();
 }
@@ -106,74 +106,75 @@ function What_Happened_School(message){
 	$.told_jack = "school";
 
 	n(message);
-	j("No!");
-	j("Why?! Why are they doing that?");
-	n("Because 'Jack and the school is a bad influence on me', or something. They just want to break us up.");
-	j("That's horrible...");
+	j("Ne, ezt nem tehetik meg!");
+	j("Miért?! Mégis mivel indokolják?");
+	n("Mert szerintük te és az iskola légköre rossz hatással van rám - vagy valami ilyesmi.");
+	n("Igazából csak szét akarnak választani minket.")
+	j("Ez borzalmas...");
 	What_Happened_2();
 }
 function What_Happened_Girl(message){
 	$.told_jack = "girl";
 
 	n(message);
-	j("Ew, seriously?");
-	n("Her name's Claire Something. She'll also be tutoring me.");
-	j("Ew squared, they're also hooking you up with your own tutor?");
-	n("Yup."); 
+	j("Ne már, komolyan?");
+	n("A csaj neve Claire Akármi. Ő fog korrepetálni.");
+	j("Tényleg azt akarják, hogy felszedd a saját korrepetálótanárod?");
+	n("Ja."); 
 	What_Happened_2();
 }
 function What_Happened_Texts(message){
 	$.told_jack = "texts";
 
 	n(message);
-	j("That is just plain rude!");
-	j("Wait, what will you do with these texts right now, then?");
-	n("I can hide them better. My parents aren't exactly a tech-savvy bunch.");
-	j("...just plain rude.");
+	j("Ez az egész rohadtul durva!");
+	j("Várj, akkor ezekkel az üzenetekkel mi lesz?");
+	n("Jobban elzárom őket előlük. Anyámék teljesen tech-analfabéták.");
+	j("...ez akkor is nagyon durva.");
 	What_Happened_2();
 }
 
 function What_Happened_2(){
 	
-	n("And that's just one out of three crappy things that happened.");
+	n("És ez még csak az egyik a három nagyon pocsék dologból.");
 	j("Nicky...");
-	j("I am truly, truly apologetic.");
-	j("This is my fault. I urged you to come out to your parents. Stupid me.");
+	j("Rettentően sajnálom.");
+	j("Az én hibám. Én vettelek rá erre az egész hülyeségre. Kretén vagyok.");
 
 	Choose({
-		"Yeah, stupid you.": function(message){
+		"Ja, tényleg kretén vagy.": function(message){
 			$.blame = "jack";
 
 			n(message);
-			n("If you hadn't been all so 'ohhhh Nicky coming out is good for the soul' and shit, this never would have...");
+			n("Ha nem jössz azzal, hogy 'ó Nicky, ez jót tenne a a lelkednek is', ez az egész nem következik be...");
 			j(". . .");
-			n("I'm sorry. You're the only person I can lash out on.");
-			n("Isn't that just fucked up?");
+			n("Sajnálom. Te vagy az egyetlen, akin kitölthetem a dühömet.");
+			n("Hát nem egy elbaszott helyzet ez?");
 			What_Now();
 		},
-		"No, it's THEIR fault.": function(message){
+		"Nem, ez az Ő HIBÁJUK.": function(message){
 			$.blame = "parents";
 
 			n(message);
-			n("They already read our texts. Anything I would have said after that couldn't change what happened.");
+			n("Miután elolvasták az üzeneteimet, mindegy lett volna, mit mondok.");
 			if($.told_jack!="texts"){
-				j("What! You didn't tell me they also read your texts!");
+				j("Várj! Nem is mondtad, hogy elolvasták az üzeneteidet!");
 			}else{
-				j("And they're stuck in their old-fashioned moralities, the poor things.");
-				n("I wouldn't go so far as to pity them.");
+				j("Megrekedtek a borzalmasan ódivatú erkölcseiknél; ez szánalmas.");
+				n("Valahogy nem tudom őket sajnálni.");
 			}
 			What_Now();
 		},
-		"No, this is all my fault.": function(message){
+		"Nem, ez az én hibám.": function(message){
 			$.blame = "nicky";
 
 			n(message);
-			n("I should have passcode-locked my phone, or use encrypted text, or hid it better...");
+			n("Le kellett volna zárnom a telefonomat, vagy kódolni a beszélgetést, vagy csak jobban elrejteni előlük...");
 			if($.told_jack!="texts"){
-				j("They read your texts, too?...");
+				j("Az üzeneteidet is elolvasták?");
 			}
-			j("Nicky, you had every right to trust them, they're your parents. They abused that trust. It's not your fault.");
-			n("Yeah...");
+			j("Nicky, jogod van megbízni bennük, mégiscsak a szüleid. Ők pedig visszaéltek ezzel. De ez nem a te hibád.");
+			n("Ja...");
 			What_Now();
 		}
 	});
@@ -184,47 +185,47 @@ function What_Now(){
 
 	j(". . .");
 
-	n("You know... talking with my parents, it's like...");
-	n("That mode of communication?");
-	n("It's imprecise, impersonal, impossible to truly connect.");
+	n("Tudod, beszélgetni a szüleiddel...");
+	n("Ez egy módja a kommunikációnak, ugye?");
+	n("Egy üres, jellegtelen, érzéketlen és pontatlan formája.");
 
 	j(". . .");
-	j("What now?");
+	j("Most mi lesz?");
 
 	Choose({
-		"I'm going to sabotage my parents' plans.": function(message){
+		"Szabotálni fogom a szüleim terveit.": function(message){
 			n(message);
 
 			if($.told_jack=="texts"){
-				n("I'll set up a new email and virtual phone number to talk with you.");
-				n("This way they can't spy on our communications anymore.");
+				n("Csinálok egy új email-t és egy virtuális számot a telefonomra.");
+				n("Így többé nem olvasgathatnak bele a beszélgetéseinkbe.");
 			}else if($.told_jack=="girl"){
-				n("I'll tell Claire everything. With any luck, she'll help me fight back.");
+				n("Mindent elmondok Claire-nek. Kis szerencsével talán segít visszavágni.");
 			}else{
-				n("I'll figure out a way, somehow...");
+				n("Csak még ki kell találnom, hogyan...");
 			}
 
 			What_Now_2();
 		},
-		"I'll visit the school counselor tomorrow.": function(message){
+		"Holnap meglátogatom az iskolapszichológust.": function(message){
 			n(message);
 
 			if($.told_jack=="abuse"){
-				n("Like I promised. Like you made me promise.");
+				n("Ahogy ígértem. Illetve ahogy megígértetted velem.");
 			}else if($.told_jack=="school"){
-				n("My current school, that is. I don't know how soon they'll be transferring me.");
+				n("Már a jelenlegi iskolámban persze. Fogalmam sincs, hová íratnak majd át.");
 			}else{
-				n("At least they'll be someone else I can lash out on.");
+				n("Legalább akkor lesz valaki, akin nyugodtan kitölthetem a dühömet.");
 			}
 
 			What_Now_2();
 		},
-		"I'm getting out of this house.": function(message){
+		"Lelépek innen.": function(message){
 			n(message);
 
-			n("Not running away, I mean. Although if I did I could crash at your place.");
-			n("But anyway. I'm going to try to get an internship or scholarship in the US.");
-			n("And get far, far away from these people.");
+			n("Persze nem elmenekülni akarok. Bár ha megtenném, összeomlanának.");
+			n("De tényleg be kell kerülnöm egy bentlakásos iskolába, vagy egy kollégiumba, lehetőleg Amerikában.");
+			n("Hogy minél messzebb lehessek ezektől az emberektől.");
 			What_Now_2();
 		}
 	});
@@ -233,35 +234,35 @@ function What_Now(){
 
 function What_Now_2(){
 
-	j("No, I mean... what now, between us?");
+	j("Nem, én nem így értettem... Mi lesz velünk?");
 	n("Jack...");
-	j("What do we do? What... What happens?");
+	j("Mit tegyünk? Hogyan tovább?");
 	n(". . .");
 
 	Choose({
-		"We have to break up.": function(message){
+		"Szakítanunk kell.": function(message){
 			$.breaking_up_soon = true;
 
 			n(message);
 
-			j("No, no no...");
-			n("I can't do this to you, Jack. I can't pull you down with me.");
-			j("At least, don't type 'we can still be friends'.");
-			n("we can still be frie");
+			j("Nenenene...");
+			n("Nem tudom ezt tenni veled, Jack. Nem akarlak lehúzni magammal.");
+			j("Legalább ne kérd, hogy 'maradjunk barátok'.");
+			n("de maradjunk b--");
 			n(". . .");
-			j("Because, of course we're friends. Of course we are.");
+			j("Mert amúgy is azok vagyunk. Tényleg.");
 			n(". . .");
 			What_Now_3();
 		},
-		"We stick together as long as we can.": function(message){
+		"Együtt maradunk, amíg csak tudunk.": function(message){
 			n(message);
 
 			j(". . .");
-			j("As long as we can.");
+			j("Amíg csak tudunk.");
 			n(". . .");
 			What_Now_3();
 		},
-		"I don't know.": function(message){
+		"Nem tudom.": function(message){
 			$.breaking_up_soon = true;
 
 			n(message);
@@ -275,20 +276,20 @@ function What_Now_2(){
 
 function What_Now_3(){
 
-	n("It's late.");
-	n("There's a lot I need to sleep on, now.");
-	j("Okay.");
+	n("Késő van.");
+	n("Most egy hatalmas alvásra van szükségem.");
+	j("Oké.");
 	j(". . .");
-	j("I love you, Nicky.");
-	n("I love you too, Jack.");
+	j("Szeretlek, Nicky.");
+	n("Én is szeretlek, Jack.");
 	
 	var insult = "";
-	if($.hippies) insult+=" new-age hippie";
-	if($.im_a_poet) insult+=" amateur poet";
+	if($.hippies) insult+=" kis hippi";
+	if($.im_a_poet) insult+=" amatőr költők gyöngye";
 	if(insult!=""){
-		n("You"+insult+".");
+		n("Te"+insult+".");
 	}else{
-		n("You goof.");
+		n("Te gyagyás.");
 	}
 
 	The_Game_Ends();
